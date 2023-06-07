@@ -59,17 +59,24 @@
                         <div class="card-body">
                             <div class="form-group mb-3">
                                 <label>Heading <span class="text-muted text-danger">*</span></label>
-                                <input type="text" maxlength="45" class="form-control" name="heading" required>
+                                <input type="text" maxlength="30" class="form-control" name="heading" required>
                                 <div class="invalid-feedback">
                                     Please enter the slider heading.
                                 </div>
                             </div>
 
                             <div class="form-group mb-3">
-                                <label>Sub Heading <span class="text-muted text-danger">*</span></label>
-                                <input type="text" maxlength="30" class="form-control" name="subheading" required>
+                                <label>Sub Heading </label>
+                                <input type="text" maxlength="30" class="form-control" name="subheading">
                                 <div class="invalid-feedback">
                                     Please enter the slider subheading.
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Small description </label>
+                                <input type="text" maxlength="100" class="form-control" name="caption1">
+                                <div class="invalid-feedback">
+                                    Please enter the small summary.
                                 </div>
                             </div>
                         </div>
@@ -114,7 +121,7 @@
                                         id="profile-foreground-img-file-input" onchange="loadbasicFile('profile-foreground-img-file-input','current-img',event)" name="image" required
                                         class="profile-foreground-img-file-input" >
 
-                                <figcaption class="figure-caption">*use image minimum of 1920px x 600px </figcaption>
+                                <figcaption class="figure-caption">*use image minimum of 1920px x 900px </figcaption>
                                 <div class="invalid-feedback" >
                                     Please select a image.
                                 </div>
@@ -158,7 +165,7 @@
                                     <table id="slider-index" class="table align-middle table-nowrap table-striped">
                                         <thead class="table-light">
                                         <tr>
-                                            <th>Slider Image</th>
+                                            <th></th>
                                             <th>Heading</th>
                                             <th>Subheading</th>
                                             <th>Button</th>
@@ -171,9 +178,7 @@
                                         @if(@$sliders)
                                             @foreach($sliders as  $slider)
                                                 <tr>
-                                                    <td class="align-middle pt-6 pb-4 px-6">
-                                                        <img src="{{asset('/images/sliders/'.@$slider->image)}}" alt="{{@$slider->slug}}" class="figure-img rounded avatar-lg">
-                                                    </td>
+                                                    <td>{{$loop->iteration}}</td>
                                                     <td>{{$slider->heading}}</td>
                                                     <td>{{$slider->subheading}}</td>
                                                     <td>{{$slider->button}}</td>
@@ -246,16 +251,23 @@
 
                             <div class="form-group mb-3">
                                 <label>Heading </label>
-                                <input type="text" maxlength="45" class="form-control" name="heading" id="heading" required>
+                                <input type="text" maxlength="30" class="form-control" name="heading" id="heading" required>
                                 <div class="invalid-feedback">
                                     Please enter the slider heading.
                                 </div>
                             </div>
                             <div class="form-group mb-3">
                                 <label>Sub Heading </label>
-                                <input type="text" maxlength="30" class="form-control" name="subheading" id="subheading" required>
+                                <input type="text" maxlength="30" class="form-control" name="subheading" id="subheading">
                                 <div class="invalid-feedback">
                                     Please enter the slider subheading.
+                                </div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Small summary </label>
+                                <input type="text" maxlength="100" class="form-control" name="caption1" id="caption1">
+                                <div class="invalid-feedback">
+                                    Please enter the small summary.
                                 </div>
                             </div>
                             <div class="form-group mb-3">
@@ -280,7 +292,7 @@
                                         id="profile-foreground-img-file" onchange="loadbasicFile('profile-foreground-img-file','current-edit-img',event)" name="image"
                                         class="profile-foreground-img-file-input" >
 
-                                <figcaption class="figure-caption">*use image minimum of 1920px x 600px </figcaption>
+                                <figcaption class="figure-caption">*use image minimum of 1920px x 900px </figcaption>
                                 <div class="invalid-feedback" >
                                     Please select a image.
                                 </div>

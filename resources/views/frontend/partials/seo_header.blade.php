@@ -46,7 +46,7 @@
                         <div class="mail">
                             <a href="mailto:{{@$setting_data->email ?? ''}}"><i class="fal fa-envelope"></i> {{@$setting_data->email ?? ''}}</a>
                         </div>
-                        <div class="working-time">
+                        <div class="working-time mail">
                             <a href="tel:{{@$setting_data->phone ?? $setting_data->mobile ?? ''}}"><i class="fal fa-phone-alt"></i> {{@$setting_data->phone ?? $setting_data->mobile  ?? ''}}</a>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
                     <div class="thumbnail">
                         <a href="/">
-                            <img src="{{$setting_data->logo ? asset('/images/settings/'.@$setting_data->logo):''}}" alt="">
+                            <img src="{{$setting_data->logo ? asset('/images/settings/'.@$setting_data->logo):''}}" style=" width: 250px;" alt="">
                         </a>
                     </div>
                 </div>

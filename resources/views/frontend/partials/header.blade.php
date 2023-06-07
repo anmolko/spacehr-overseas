@@ -58,7 +58,7 @@
                         <div class="mail">
                             <a href="mailto:{{@$setting_data->email ?? ''}}"><i class="fal fa-envelope"></i> {{@$setting_data->email ?? ''}}</a>
                         </div>
-                        <div class="working-time">
+                        <div class="working-time mail">
                             <a href="tel:{{@$setting_data->phone ?? $setting_data->mobile ?? ''}}"><i class="fal fa-phone-alt"></i> {{@$setting_data->phone ?? $setting_data->mobile  ?? ''}}</a>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-4 col-4">
                     <div class="thumbnail">
                         <a href="/">
-                            <img src="{{$setting_data->logo ? asset('/images/settings/'.@$setting_data->logo):''}}" alt="">
+                            <img src="{{$setting_data->logo ? asset('/images/settings/'.@$setting_data->logo):''}}" style=" width: 250px;" alt="">
                         </a>
                     </div>
                 </div>
@@ -165,11 +165,11 @@
                             </ul>
                         </nav>
                         <div class="button-area">
-                            <button id="search" class="rts-btn btn-primary-alta"><i class="far fa-search"></i></button>
+                            <button id="search" class="rts-btn btn-primary-alta"><i class="fa fa-search"></i></button>
                             <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
                             <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
-                                <img class="menu-dark lazy" data-src="{{ asset('assets/images/icon/menu.png') }}" alt="Menu-icon">
-                                <img class="menu-light lazy" data-src="{{ asset('assets/images/icon/menu-light.png') }}" alt="Menu-icon">
+                                <img class="menu-dark lazy" data-src="{{ asset('assets/frontend/images/icon/menu.png') }}" alt="Menu-icon">
+                                <img class="menu-light lazy" data-src="{{ asset('assets/frontend/images/icon/menu-light.png') }}" alt="Menu-icon">
                             </button>
                         </div>
                     </div>
@@ -181,7 +181,7 @@
 <!-- End header area -->
 
 <div id="side-bar" class="side-bar">
-    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <button class="close-icon-menu"><i class="fa fa-times"></i></button>
     <!-- inner menu area desktop start -->
     <div class="rts-sidebar-menu-desktop">
         <a class="logo-1" href="/"><img class="logo lazy" data-src="{{$setting_data->logo ? asset('/images/settings/'.@$setting_data->logo):''}}" alt=""></a>
@@ -321,12 +321,12 @@
             <div class="input-div">
                 <form method="get" id="searchform" action="{{route('searchJob')}}">
                     <input class="search-input" id="s" name="s" type="text" placeholder="Search for jobs.." oninvalid="this.setCustomValidity('Type a keyword')" oninput="this.setCustomValidity('')" required>
-                    <button><i class="far fa-search"></i></button>
+                    <button><i class="fa fa-search"></i></button>
                 </form>
             </div>
         </div>
     </div>
-    <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
+    <div id="close" class="search-close-icon"><i class="fa fa-times"></i></div>
 </div>
 
 <div id="anywhere-home">

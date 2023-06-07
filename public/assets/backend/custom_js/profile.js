@@ -159,8 +159,6 @@ $('#profile-foreground-img-file-input, #profile-img-file-input').on('change', fu
                     var imagename = 'cover photo';
                 }
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                         'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -179,8 +177,6 @@ $('#profile-foreground-img-file-input, #profile-img-file-input').on('change', fu
             }
             else{
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                         ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -225,8 +221,6 @@ $('#profile-password-btn').on('click', function() {
         success: function(response){
             if(response.status=='success'){
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                         'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -249,8 +243,6 @@ $('#profile-password-btn').on('click', function() {
             }
             else{
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                         ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -281,8 +273,6 @@ $('#close-acc-btn').on('click', function() {
     var request_method  = 'POST'; //get form GET/POST method
 
     Swal.fire({
-        imageUrl: "/assets/backend/images/canosoft-logo.png",
-        imageHeight: 90,
         html: '<div class="mt-3">' +
             '<lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" ' +
             'trigger="loop" colors="primary:#f7b84b,secondary:#f06548" ' +
@@ -317,8 +307,6 @@ $('#close-acc-btn').on('click', function() {
                 success: function(response){
                     if(response.status=='success'){
                         Swal.fire({
-                            imageUrl: "/assets/backend/images/canosoft-logo.png",
-                            imageHeight: 50,
                             html: '<div class="mt-2">' +
                                 '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                                 'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -342,8 +330,6 @@ $('#close-acc-btn').on('click', function() {
                     }
                     else{
                         Swal.fire({
-                            imageUrl: "/assets/backend/images/canosoft-logo.png",
-                            imageHeight: 90,
                             html: '<div class="mt-2">' +
                                 '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                                 ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -399,8 +385,6 @@ $('#socials-update').on('click', function(e) {
         success: function(response){
             if(response.status=='success'){
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                         'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -419,8 +403,6 @@ $('#socials-update').on('click', function(e) {
             }
             else{
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                         ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +

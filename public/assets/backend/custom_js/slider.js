@@ -55,8 +55,6 @@ $(document).on('click','.action-delete', function (e) {
     var url = form.attr('action');
     var form_data = form.serialize();
     Swal.fire({
-        imageUrl: "/assets/backend/images/canosoft-logo.png",
-        imageHeight: 90,
         html: '<div class="mt-2">' +
             '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
             ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -81,8 +79,6 @@ $(document).on('click','.action-delete', function (e) {
                 .done(function(response) {
                     if(response.status == "success") {
                         Swal.fire({
-                            imageUrl: "/assets/backend/images/canosoft-logo.png",
-                            imageHeight: 90,
                             html: '<div class="mt-2">' +
                                 '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                                 'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -101,8 +97,6 @@ $(document).on('click','.action-delete', function (e) {
                         }, 2500);
                     }else{
                         Swal.fire({
-                            imageUrl: "/assets/backend/images/canosoft-logo.png",
-                            imageHeight: 90,
                             html: '<div class="mt-2">' +
                                 '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                                 ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -143,8 +137,6 @@ $(document).on('click','.change-status', function (e) {
     var url    = $(this).attr('cs-update-route');
     if(status == 'deactive'){
         Swal.fire({
-            imageUrl: "/assets/backend/images/canosoft-logo.png",
-            imageHeight: 90,
             html: '<div class="mt-2">' +
                 '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                 ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -199,8 +191,6 @@ function statusupdate(url,status){
         success: function(dataResult){
             if(dataResult == "yes"){
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                         'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -222,8 +212,6 @@ function statusupdate(url,status){
             }else{
 
                 Swal.fire({
-                    imageUrl: "/assets/backend/images/canosoft-logo.png",
-                    imageHeight: 90,
                     html: '<div class="mt-2">' +
                         '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                         ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -242,8 +230,6 @@ function statusupdate(url,status){
         },
         error: function() {
             Swal.fire({
-                imageUrl: "/assets/backend/images/canosoft-logo.png",
-                imageHeight: 90,
                 html: '<div class="mt-2">' +
                     '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                     ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +

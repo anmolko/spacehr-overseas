@@ -4,340 +4,111 @@
 
 @endsection
 @section('content')
-    <!-- banner blank space area -->
-    <div class="rts-banner-area rts-banner-one">
-        <div class="swiper mySwiper banner-one">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <!-- banner single content -->
-                    <div class="banner-one-inner text-start">
-                        <p class="pre-title">
-                            <span>Welcome!</span> Start Growing Your Business Today
-                        </p>
-                        <h1 class="title ">Make <span>Business Unique </span> <br>
-                            With Great Ideas</h1>
-                        <p class="disc banner-para">
-                            Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit <br> Dui
-                            feugiat
-                            fusce conubia ridiculus tristique parturient
-                        </p>
-                        <a href="#" class="rts-btn btn-primary color-h-black">Get Consultant</a>
-                        <img class="shape-img one" src="assets/images/banner/shape/01.png" alt="banner_business">
-                    </div>
-                    <!-- banner single content end -->
-                </div>
-                <div class="swiper-slide two">
-                    <!-- banner single content -->
-                    <div class="banner-one-inner text-start">
-                        <p class="pre-title">
-                            <span>Welcome!</span> Start Growing Your Business Today
-                        </p>
-                        <h1 class="title ">Launch <span>Ultra Modern</span> <br> Effective Business</h1>
-                        <p class="disc banner-para">
-                            Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit <br> Dui
-                            feugiat
-                            fusce conubia ridiculus tristique parturient
-                        </p>
-                        <a href="#" class="rts-btn btn-primary color-h-black">Get Consultant</a>
-                        <img class="shape-img one" src="assets/images/banner/shape/01.png" alt="banner_business">
-                    </div>
-                    <!-- banner single content end -->
-                </div>
-                <div class="swiper-slide three">
-                    <!-- banner single content -->
-                    <div class="banner-one-inner text-start">
-                        <p class="pre-title">
-                            <span>Welcome!</span> Start Growing Your Business Today
-                        </p>
-                        <h1 class="title ">Make <span>Business Growth</span> <br> With Next Level</h1>
-                        <p class="disc banner-para">
-                            Porttitor ornare fermentum aliquam pharetra facilisis gravida risus suscipit <br> Dui
-                            feugiat
-                            fusce conubia ridiculus tristique parturient
-                        </p>
-                        <a href="#" class="rts-btn btn-primary color-h-black">Get Consultant</a>
-                        <img class="shape-img one" src="assets/images/banner/shape/01.png" alt="banner_business">
-                    </div>
-                    <!-- banner single content end -->
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-        <div class="animation-img">
-            <img class="shape-img two" src="assets/images/banner/shape/02.png" alt="banner_business">
-            <img class="shape-img three" src="assets/images/banner/shape/03.png" alt="banner_business">
-        </div>
-    </div>
-    <!-- banner blank space area end -->
-
-    <!-- rts about us section start -->
-    <div class="rts-about-area rts-section-gap bg-about-sm-shape">
-        <div class="container">
-            <div class="row g-5 align-items-center">
-                <!-- about left -->
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2 mt_md--50 mt_sm--50">
-                    <div class="rts-title-area">
-                        <p class="pre-title">
-                            More About Us
-                        </p>
-                        <h2 class="title">We Provide Best Business
-                            Solution in Town</h2>
-                    </div>
-                    <div class="about-inner">
-                        <p class="disc">
-                            Porttitor ornare fermentum aliquam pharetra ut facilisis gravida risus suscipit. dui feugiat
-                            fusce conubia ridiculus tristique parturient natoque vulputate risu
-                            business solution ceter 24/7 great support
-                        </p>
-                        <!-- start about success area -->
-                        <div class="row about-success-wrapper">
-                            <!-- left wrapper start -->
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single">
-                                    <i class="far fa-check"></i>
-                                    <p class="details">24/7 Call Services Avilable</p>
-                                </div>
-                                <div class="single">
-                                    <i class="far fa-check"></i>
-                                    <p class="details">Great Skilled Consultant</p>
-                                </div>
-                                <div class="single">
-                                    <i class="far fa-check"></i>
-                                    <p class="details">Expert Team Members</p>
-                                </div>
-                            </div>
-                            <!-- left wrapper end -->
-                            <div class="col-lg-6 col-md-6">
-                                <div class="single">
-                                    <i class="far fa-check"></i>
-                                    <p class="details">How to improve business
-                                    </p>
-                                </div>
-                                <div class="single">
-                                    <i class="far fa-check"></i>
-                                    <p class="details">Business is the best plan</p>
-                                </div>
-                                <div class="single">
-                                    <i class="far fa-check"></i>
-                                    <p class="details">Services we provide</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- start about success area -->
-
-                        <!-- about founder & get in touch start -->
-                        <div class="row about-founder-wrapper align-items-center mt--40">
-                            <!-- left area start -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="author-inner">
-                                    <a class="thumbnail" href="#"><img src="assets/images/about/sm-01.png" alt="finbiz_founder"></a>
-                                    <div class="founder-details">
-                                        <a href="team-details.html">
-                                            <h6 class="title">Adrew David</h6>
-                                        </a>
-                                        <span>CEO & Founder</span>
+    @if(count($sliders) > 0)
+        <div class="rts-banner-area banner-three">
+            <div class="swiper mySwiperh3_banner">
+                <div class="swiper-wrapper">
+                    @foreach(@$sliders as $slider)
+                        <div class="swiper-slide">
+                            <div class="bg_banner-three bg_image rts-section-gap" style="background-image:url({{ asset('/images/sliders/'.$slider->image) }})">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="banner-three-inner">
+                                                <span class="subtitle-banner">{{@$slider->subheading ?? ''}}</span>
+                                                <!-- type headline start-->
+                                                <h1 class="title cd-headline clip is-full-width">
+                                                    {{@$slider->heading ?? ''}}
+                                                </h1>
+                                                <p class="disc">
+                                                    {{@$slider->caption1 ?? ''}}
+                                                </p>
+                                                @if(@$slider->link)
+                                                    <div class="button-group">
+                                                        <a href="{{@$slider->link ?? ''}}" class="rts-btn btn-primary-3">{{@$slider->button ?? 'Start Exploring'}}</a>
+                                                    </div>
+                                                @endif
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- left area end -->
-                            <!-- right founder area -->
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt_sm--20">
-                                <div class="author-call-option">
-                                    <img class="authore-call" src="assets/images/about/call.svg" alt="call_founder">
-                                    <div class="call-details">
-                                        <span>Call us anytime</span>
-                                        <a href="tel:+18475555555">
-                                            <h6 class="title">+256 21458.2146</h6>
-                                        </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if(!empty($homepage_info->welcome_description))
+        <div class="rts-about-area rts-section-gap bg-about-sm-shape">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <!-- about left -->
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-1 order-md-2 order-sm-2 order-2 mt_md--50 mt_sm--50">
+                        <div class="rts-title-area">
+                            <p class="pre-title">
+                                {{$homepage_info->welcome_subheading ?? ''}}
+                            </p>
+                            <h2 class="title">{{$homepage_info->welcome_heading ?? ''}}</h2>
+                        </div>
+                        <div class="about-inner">
+                            <p class="disc fs-18 text-justify">
+                                {{ ucfirst(@$homepage_info->welcome_description) }}
+                            </p>
+                            <a href="#" class="rts-btn btn-primary-3 color-h-black">Get Started</a>
+                        </div>
+                    </div>
+                    <!-- about right -->
+
+                    <!-- about-right Start-->
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
+                        <div class="about-one-thumbnail">
+                            <img src="{{ @$homepage_info->welcome_image ? asset('/images/home/welcome/'.@$homepage_info->welcome_image):''}}" alt="">
+                        </div>
+                    </div>
+                    <!-- about-right end -->
+                </div>
+            </div>
+        </div>
+    @endif
+
+    @if(count($latestServices) > 0)
+
+        <div class="rts-service-area rts-section-gapTop pb--200 service-two-bg bg_image">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="rts-title-area service text-center">
+                            <p class="pre-title">
+                                Our Services
+                            </p>
+                            <h2 class="title">What we provide</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5 service padding-controler">
+                    @foreach(@$latestServices as $index=>$service)
+                        <div class="col-xl-4 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
+                            <div class="service-two-inner">
+                                <a href="{{route('service.single',$service->slug)}}" class="thumbnail">
+                                    <img class="lazy" data-src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="Business_image"></a>
+                                <div class="body-content">
+                                    <div class="hidden-area">
+                                        <h5 class="title">{{ucwords(@$service->title)}}</h5>
+                                        <p class="dsic">
+                                           {{ elipsis(strip_tags($service->description))}}
+                                        </p>
+                                        <a class="rts-read-more-two color-primary" href="{{route('service.single',$service->slug)}}">Read More<i class="fa fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
-                            <!-- left founder area -->
                         </div>
-                        <!-- about founder & get in touch end -->
-                    </div>
-                </div>
-                <!-- about right -->
-
-                <!-- about-right Start-->
-                <div class="col-lg-6 col-md-12 col-sm-12 col-12 order-lg-2 order-md-1 order-sm-1 order-1">
-                    <div class="about-one-thumbnail">
-                        <img src="assets/images/about/main/about-01.png" alt="about-finbiz">
-                        <img class="small-img" src="assets/images/about/main/about-02.png" alt="finbiz-small">
-                        <div class="experience">
-                            <div class="left single">
-                                <h2 class="title">25+</h2>
-                                <p class="time">Years</p>
-                            </div>
-                            <div class="right single">
-                                <p class="disc">
-                                    Of experience
-                                    in consulting
-                                    service
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- about-right end -->
-            </div>
-        </div>
-    </div>
-    <!-- rts about us section end -->
-
-    <!-- rts service post area  Start-->
-    <div class="rts-service-area rts-section-gapBottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="rts-title-area service text-center">
-                        <p class="pre-title">
-                            Our Services
-                        </p>
-                        <h2 class="title">High Quality Services</h2>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
-        <div class="container-fluid service-main plr--120-service mt--50 plr_md--0 pl_sm--0 pr_sm--0">
-            <div class="background-service row">
-                <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner one">
-                        <div class="thumbnail">
-                            <img src="assets/images/service/icon/01.svg" alt="finbiz_service">
-                        </div>
-                        <div class="service-details">
-                            <a href="service-details.html">
-                                <h5 class="title">Business Planning</h5>
-                            </a>
-                            <p class="disc">
-                                Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
-                            </p>
-                            <a class="rts-read-more btn-primary" href="service-details.html"><i
-                                    class="far fa-arrow-right"></i>Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single Services -->
-                <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner two">
-                        <div class="thumbnail">
-                            <img src="assets/images/service/icon/02.svg" alt="finbiz_service">
-                        </div>
-                        <div class="service-details">
-                            <a href="service-details.html">
-                                <h5 class="title">Develop Process</h5>
-                            </a>
-                            <p class="disc">
-                                Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
-                            </p>
-                            <a class="rts-read-more btn-primary" href="service-details.html"><i
-                                    class="far fa-arrow-right"></i>Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single Services -->
-                <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner three">
-                        <div class="thumbnail">
-                            <img src="assets/images/service/icon/03.svg" alt="finbiz_service">
-                        </div>
-                        <div class="service-details">
-                            <a href="service-details.html">
-                                <h5 class="title">Strategy & Planning</h5>
-                            </a>
-                            <p class="disc">
-                                Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
-                            </p>
-                            <a class="rts-read-more btn-primary" href="service-details.html"><i
-                                    class="far fa-arrow-right"></i>Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single Services -->
-                <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner four">
-                        <div class="thumbnail">
-                            <img src="assets/images/service/icon/04.svg" alt="finbiz_service">
-                        </div>
-                        <div class="service-details">
-                            <a href="service-details.html">
-                                <h5 class="title">Business Support</h5>
-                            </a>
-                            <p class="disc">
-                                Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
-                            </p>
-                            <a class="rts-read-more btn-primary" href="service-details.html"><i
-                                    class="far fa-arrow-right"></i>Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single Services -->
-                <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner five">
-                        <div class="thumbnail">
-                            <img src="assets/images/service/icon/05.svg" alt="finbiz_service">
-                        </div>
-                        <div class="service-details">
-                            <a href="service-details.html">
-                                <h5 class="title">Audit & Evaluation</h5>
-                            </a>
-                            <p class="disc">
-                                Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
-                            </p>
-                            <a class="rts-read-more btn-primary" href="service-details.html"><i
-                                    class="far fa-arrow-right"></i>Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single Services -->
-                <!-- start single Service -->
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner six">
-                        <div class="thumbnail">
-                            <img src="assets/images/service/icon/06.svg" alt="finbiz_service">
-                        </div>
-                        <div class="service-details">
-                            <a href="service-details.html">
-                                <h5 class="title">Consultancy & Advice</h5>
-                            </a>
-                            <p class="disc">
-                                Sagitis himos pulvinar morb socis laoreet posuere enim non auctor etiam pretium libero
-                            </p>
-                            <a class="rts-read-more btn-primary" href="service-details.html"><i
-                                    class="far fa-arrow-right"></i>Read
-                                More</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- end single Services -->
-            </div>
-            <div class="row">
-                <div class="cta-one-bg col-12">
-                    <div class="cta-one-inner">
-                        <div class="cta-left">
-                            <h3 class="title">Let’s discuss about how we can help
-                                make your business better</h3>
-                        </div>
-                        <div class="cta-right">
-                            <a class="rts-btn btn-white" href="appoinment.html">Lets Work Together</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- rts service post area ENd -->
+    @endif
 
     <!-- business goal area -->
     <div class="rts-business-goal mt--0 rts-section-gapBottom">

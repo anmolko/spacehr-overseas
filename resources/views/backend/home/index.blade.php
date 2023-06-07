@@ -171,7 +171,7 @@
                                                     </div>
                                                     <div class="position-relative mb-3">
                                                         <label> Description <span class="text-muted text-danger">*</span></label>
-                                                        <textarea class="form-control" maxlength="1215" name="welcome_description" placeholder="Enter welcome description" rows="8" required>{{@$homesettings->welcome_description}}</textarea>
+                                                        <textarea class="form-control" maxlength="1025" name="welcome_description" placeholder="Enter welcome description" rows="8" required>{{@$homesettings->welcome_description}}</textarea>
                                                         <div class="invalid-tooltip">
                                                             Please enter the  description.
                                                         </div>
