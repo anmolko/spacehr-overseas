@@ -404,8 +404,6 @@
         @if(Session::has('success'))
         var message ="{{ session('success') }}";
         Swal.fire({
-            imageUrl: "/assets/backend/images/canosoft-logo.png",
-            imageHeight: 60,
             html: '<div class="mt-2">' +
                 '<lord-icon src="https://cdn.lordicon.com/lupuorrc.json"' +
                 'trigger="loop" colors="primary:#0ab39c,secondary:#405189" style="width:120px;height:120px">' +
@@ -425,8 +423,6 @@
         @if($errors->has('slug'))
                 var message ="{{ $errors->first('slug') }}";
         Swal.fire({
-            imageUrl: "/assets/backend/images/canosoft-logo.png",
-            imageHeight: 60,
             html: '<div class="mt-2">' +
                 '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                 ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -446,8 +442,6 @@
         var message ="{{ session('error') }}";
         // Toastify({ newWindow: !0, text: message, gravity: 'top', position: 'center', stopOnFocus: !0, duration: 3000, close: "close",className: "bg-success" }).showToast();
         Swal.fire({
-            imageUrl: "/assets/backend/images/canosoft-logo.png",
-            imageHeight: 60,
             html: '<div class="mt-2">' +
                 '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                 ' trigger="loop" colors="primary:#f06548,secondary:#f7b84b" ' +
@@ -466,8 +460,6 @@
         @if(Session::has('warning'))
         var message ="{{ session('warning') }}";
         Swal.fire({
-            imageUrl: "/assets/backend/images/canosoft-logo.png",
-            imageHeight: 60,
             html: '<div class="mt-2">' +
                 '<lord-icon src="https://cdn.lordicon.com/tdrtiskw.json"' +
                 ' trigger="loop" colors="primary:#f7b84b,secondary:#f06548" ' +

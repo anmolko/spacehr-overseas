@@ -80,7 +80,7 @@
 <!-- map area end -->
 
 
-<div class="rts-footer-area footer-one rts-section-gapTop bg-footer-one mt--120 mt_md--80 mt_sm--60">
+<div class="rts-footer-area footer-one rts-section-gapTop bg-footer-one mt_md--80 mt_sm--60">
     <div class="container">
         <div class="row">
             <!-- single wized -->
