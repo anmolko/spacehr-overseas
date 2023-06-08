@@ -360,7 +360,7 @@
                         </div>
                     </div>
                     <div class="lower-box">
-                        <div class="category">MD Human Resource</div>
+                        <div class="category">Space HR solution</div>
                         <h3><a href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a></h3>
                     </div>
                 </div>
@@ -551,7 +551,7 @@
                     <div class="inner-column">
                         <!--Sec Title-->
                         <div class="sec-title light" style="margin-bottom: 25px;">
-                            <div class="title-text">MD Human Resource</div>
+                            <div class="title-text">Space HR solution</div>
                             <h2>{{@$setting_data->grievance_heading}}</h2>
                         </div>
 

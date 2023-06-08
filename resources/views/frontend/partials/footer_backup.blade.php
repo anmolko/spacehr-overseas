@@ -148,7 +148,7 @@
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="column col-md-8 col-sm-12 col-xs-12">
-                    <div class="copyright">Copyrights &copy; {{date("Y")}} {{$setting_data->website_name ?? 'MD Human Resource'}} by <a href="https://www.canosoft.com.np/" target="_blank">Canosoft Techonology</a> All Rights Reserved.</div>
+                    <div class="copyright">Copyrights &copy; {{date("Y")}} {{$setting_data->website_name ?? 'Space HR solution'}} by <a href="https://www.canosoft.com.np/" target="_blank">Canosoft Techonology</a> All Rights Reserved.</div>
                 </div>
 {{--                <div class="column col-md-6 col-sm-12 col-xs-12">--}}
 {{--                    <ul class="footer-nav">--}}

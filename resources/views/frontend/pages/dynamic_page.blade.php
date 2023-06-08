@@ -139,7 +139,7 @@
                                     <div class="text">
                                         {{ucfirst(@$flash_element->list_description) }}
                                     </div>
-                                    <div class="more-link"><a class="read-more"><span class="arrow fa fa-angle-right"></span> Md Human Resource</a></div>
+                                    <div class="more-link"><a class="read-more"><span class="arrow fa fa-angle-right"></span> Space HR solution </a></div>
                                 </div>
                             </div>
                         @endforeach
@@ -186,7 +186,7 @@
                         <div class="inner-column">
                             <!--Sec Title-->
                             <div class="sec-title light" style="margin-bottom: 25px;">
-                                <div class="title-text">MD Human Resource</div>
+                                <div class="title-text">Space HR solution</div>
                                 <h2>{{@$map_descp->heading}}</h2>
                             </div>
 

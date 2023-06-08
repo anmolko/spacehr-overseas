@@ -3,12 +3,12 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>@yield('title') | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif </title>
+    <title>@yield('title') | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else Space HR solution @endif </title>
 
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="@if(!empty(@$setting_data->website_description)) {{ucwords(@$setting_data->website_description)}} @else MD Human resource @endif">
+    <meta name="description" content="@if(!empty(@$setting_data->website_description)) {{ucwords(@$setting_data->website_description)}} @elseSpace HR solution @endif">
     <meta name="author" content="Canosoft Technology" />
     <!-- App favicon -->
     <link rel="shortcut icon" type="image/x-icon"  href="<?php if(@$setting_data->favicon){?>{{asset('/images/settings/'.@$setting_data->favicon)}}<?php }else{ echo "/assets/backend/images/canosoft-favicon.png"; }?>">

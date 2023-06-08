@@ -3,7 +3,7 @@
 @section('css')
 @endsection
 @section('seo')
-    <title>{{ucfirst(@$singleJob->name)}} | {{ucwords(@$setting_data->website_name ?? 'MD Human resource')}}</title>
+    <title>{{ucfirst(@$singleJob->name)}} | {{ucwords(@$setting_data->website_name ?? 'Space HR solution')}}</title>
     <meta name='description' itemprop='description'  content='{{ucfirst(@$singleJob->meta_description)}}' />
     <meta name='keywords' content='{{ucfirst(@$singleJob->meta_tags)}}' />
     <meta property='article:published_time' content='{{@$singleJob->updated_at ?? @$singleJob->created_at}}' />
@@ -14,7 +14,7 @@
     <meta property="og:type" content="Coperation" />
     <meta property="og:locale" content="en-us" />
     <meta property="og:locale:alternate"  content="en-us" />
-    <meta property="og:site_name" content="{{ucwords(@$setting_data->website_name ?? 'MD Human resource')}}" />
+    <meta property="og:site_name" content="{{ucwords(@$setting_data->website_name ?? 'Space HR solution')}}" />
     <meta property="og:image" content="{{asset('/images/job/'.@$singleJob->image)}}" />
     <meta property="og:image:url" content="{{asset('/images/job/'.@$singleJob->image)}}" />
     <meta property="og:image:size" content="300" />

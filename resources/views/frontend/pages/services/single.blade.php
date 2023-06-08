@@ -20,7 +20,7 @@
     </style>
 @endsection
 @section('seo')
-    <title>{{ucfirst(@$singleService->title)}} | {{ucwords(@$setting_data->website_name ?? 'MD Human resource')}}   </title>
+    <title>{{ucfirst(@$singleService->title)}} | {{ucwords(@$setting_data->website_name ?? 'Space HR solution')}}   </title>
     <meta name='description' itemprop='description'  content='{{ucfirst(@$singleService->meta_description)}}' />
     <meta name='keywords' content='{{ucfirst(@$singleService->meta_tags)}}' />
     <meta property='article:published_time' content='{{@$singleService->updated_at ?? @$singleService->created_at}}' />
@@ -31,7 +31,7 @@
     <meta property="og:type" content="Coperation" />
     <meta property="og:locale" content="en-us" />
     <meta property="og:locale:alternate"  content="en-us" />
-    <meta property="og:site_name" content="{{ucwords(@$setting_data->website_name ?? 'MD Human resource')}} " />
+    <meta property="og:site_name" content="{{ucwords(@$setting_data->website_name ?? 'Space HR solution')}} " />
     <meta property="og:image" content="{{asset('/images/service/'.@$singleService->banner_image)}}" />
     <meta property="og:image:url" content="{{asset('/images/service/'.@$singleService->banner_image)}}" />
     <meta property="og:image:size" content="300" />

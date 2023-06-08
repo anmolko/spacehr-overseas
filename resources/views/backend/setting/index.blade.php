@@ -36,7 +36,7 @@
                                             <div class="col-md">
                                                 <div>
                                                     <h4 class="fw-bold">
-                                                        {{(@$setting_data !== null && @$setting_data->website_name !== "") ? @$setting_data->website_name :"MD Human resource" }}
+                                                        {{(@$setting_data !== null && @$setting_data->website_name !== "") ? @$setting_data->website_name :"Space HR solution" }}
                                                         - Dashboard Settings</h4>
                                                     <div class="hstack gap-3 flex-wrap">
                                                         <div><i class="ri-smartphone-line align-bottom me-1"></i>

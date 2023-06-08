@@ -2,24 +2,24 @@
 
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="MD Human resource">
-    <meta name="description" content="@if(!empty(@$setting_data->meta_description)) {{ucwords(@$setting_data->meta_description)}} @else MD Human resource @endif"/>
-    <meta name="keywords" content="@if(!empty(@$setting_data->meta_tags)) {{@$setting_data->meta_tags}} @else MD Human resource @endif">
+    <meta name="author" content="Space HR solution">
+    <meta name="description" content="@if(!empty(@$setting_data->meta_description)) {{ucwords(@$setting_data->meta_description)}} @else Space HR solution @endif"/>
+    <meta name="keywords" content="@if(!empty(@$setting_data->meta_tags)) {{@$setting_data->meta_tags}} @else Space HR solution @endif">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <link rel="canonical" href="https://mdhumanresource.com" />
+    <link rel="canonical" href="https://spacehrsolution.com" />
 
     @if (\Request::is('/'))
-        <title>@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif </title>
+        <title>@if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else Space HR solution @endif </title>
     @else
-        <title>@yield('title') | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else MD Human resource @endif </title>
+        <title>@yield('title') | @if(!empty(@$setting_data->website_name)) {{ucwords(@$setting_data->website_name)}} @else Space HR solution @endif </title>
     @endif
 
 
-    <meta property="og:title" content="@if(!empty(@$setting_data->meta_title)) {{ucwords(@$setting_data->meta_title)}} @else  MD Human resource @endif" />
+    <meta property="og:title" content="@if(!empty(@$setting_data->meta_title)) {{ucwords(@$setting_data->meta_title)}} @else  Space HR solution @endif" />
     <meta property="og:type" content="Consultancy" />
-    <meta property="og:url" content="https://mdhumanresource.com/" />
-    <meta property="og:site_name" content="MD Human resource" />
-    <meta property="og:description" content="@if(!empty(@$setting_data->meta_description)) {{ucwords(@$setting_data->meta_description)}} @else MD Human resource @endif " />
+    <meta property="og:url" content="https://spacehrsolution.com/" />
+    <meta property="og:site_name" content="Space HR solution" />
+    <meta property="og:description" content="@if(!empty(@$setting_data->meta_description)) {{ucwords(@$setting_data->meta_description)}} @else Space HR solution @endif " />
 
     <link rel="shortcut icon" type="image/x-icon" href="{{ (@$setting_data->favicon) ? asset('/images/settings/'.@$setting_data->favicon):asset('assets/backend/images/canosoft-favicon.png') }}">
 
