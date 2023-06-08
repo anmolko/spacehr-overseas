@@ -12,53 +12,65 @@
 
 @endsection
 @section('content')
-    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>{{ucwords(@$page_detail->name)}}</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
-                <li>{{ucwords(@$page_detail->name)}}</li>
-            </ul>
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">{{ucwords(@$page_detail->name)}}</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">{{ucwords(@$page_detail->name)}}</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
     @foreach($sections as $key=>$value)
 
         @if($value == "basic_section")
+            <div class="rts-business-goal rts-business-goal2 mt--0 rts-section-gapBottom">
+                <div class="container">
+                    <div class="row">
+                        <!-- business goal left -->
+                        <div class="col-lg-6">
+                            <div class="business-goal-one">
+                                <img class="lazy" data-src="{{asset('/images/section_elements/basic_section/'.@$basic_elements->image) }}" alt="">
+                            </div>
+                        </div>
+                        <!-- business goal right -->
 
-            <section class="help-section dynamic-help">
-                <div class="auto-container">
-                    <div class="inner-container clearfix">
-                        <!--Content Column-->
-                        <div class="content-column">
-                            <div class="inner-column">
-                                <div class="content">
-                                    <div class="sec-title" style="margin-bottom: 20px;">
-                                        <div class="title-text">{{@$basic_elements->subheading??'MD Human resource'}}</div>
-                                        <h2>{{@$basic_elements->heading ?? ''}}</h2>
-                                    </div>
-                                    <div class="text dynamic-text" style="font-size: 16px;padding-left: 0px;">
-                                        {!! @$basic_elements->description !!}
+                        <!-- right area business -->
+                        <div class="col-lg-6 mt--35 mt_md--70 mt_sm--70 mb_sm--35">
+                            <div class="business-goal-right">
+                                <div class="rts-title-area business text-start pl--30">
+                                    <p class="pre-title">
+                                        {{@$basic_elements->subheading?? ''}}
+                                    </p>
+                                    <h2 class="title">{{@$basic_elements->heading ?? ''}}</h2>
+                                </div>
+                                <div class="rts-business-goal pl--30" style="margin-top: 10px;">
+                                    <div class="about-inner">
+                                        <p class="disc fs-18 text-justify">
+                                            {!! @$basic_elements->description !!}
+                                        </p>
                                     </div>
                                     @if(@$basic_elements->button_link)
-                                        <a class="risk" href="{{@$basic_elements->button_link}}">
-                                            <span class="fa fa-angle-right"></span>
-                                            {{ucwords(@$basic_elements->button ?? 'Discover More')}}
-                                        </a>
+                                        <div class="goal-button-wrapper mt--10">
+                                            <a href="{{@$basic_elements->button_link}}" class="rts-btn btn-primary color-h-black">
+                                                {{ucwords(@$basic_elements->button ?? 'Discover More')}}
+                                            </a>
+                                        </div>
                                     @endif
                                 </div>
                             </div>
                         </div>
-                        <!--Image Column-->
-                        <div class="image-column" style="background-image: url({{asset('/images/section_elements/basic_section/'.@$basic_elements->image) }})">
-                            <div class="inner-column wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="image">
-                                    <img src="{{asset('/images/section_elements/basic_section/'.@$basic_elements->image) }}" alt="" />
-                                </div>
-                            </div>
-                        </div>
+                        <!-- right area business ENd -->
                     </div>
                 </div>
-            </section>
+            </div>
         @endif
 
         @if($value == "call_to_action_1")
