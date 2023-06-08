@@ -193,10 +193,10 @@ if (!function_exists('get_icons')) {
         return $icon;
     }
 }
+
 if (!function_exists('get_solution_icons')) {
     /**
-     * @param $menu_type
-     * @param $menu
+     * @param $index
      * @return string
      */
     function get_solution_icons($index){
@@ -224,6 +224,43 @@ if (!function_exists('get_solution_icons')) {
         return $icon;
     }
 }
+
+if (!function_exists('recruitment_process_icons')) {
+    /**
+     * @param $index
+     * @return string
+     */
+    function recruitment_process_icons($index): string
+    {
+        $icon   = '';
+        if($index == 0){
+            $icon = '01.svg';
+        }else if($index == 1){
+            $icon = '02.svg';
+        }else if($index == 2){
+            $icon = '03.svg';
+        }else if($index == 3){
+            $icon = '04.svg';
+        }else if($index == 4){
+            $icon = 'goal.svg';
+        }else if($index == 5){
+            $icon = 'save.svg';
+        }else if($index == 6){
+            $icon = 'target.svg';
+        }else if($index == 7){
+            $icon = 'user.svg';
+        }else if($index == 8){
+            $icon = 'briefcase.svg';
+        }else if($index == 9){
+            $icon = 'dashboard.svg';
+        }else{
+            $icon = 'trophy.svg';
+        }
+
+        return $icon;
+    }
+}
+
 
 if (!function_exists('get_country')) {
     /**

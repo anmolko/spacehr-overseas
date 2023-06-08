@@ -10955,9 +10955,12 @@ body {
   margin-bottom: 24px;
 }
 .rts-title-area.service::after {
-  content: "Services";
+  content: "Service";
   left: 50%;
   transform: translateX(-50%);
+}
+.rts-title-area.core-value::after {
+  content: "Values";
 }
 .rts-title-area.pricing-planes::after {
   content: "price plans";
@@ -11365,7 +11368,7 @@ body {
   left: 51%;
   transform: translateX(-50%);
   top: -42%;
-  content: "03";
+  content: "Flow";
 }
 .home-blue .title-area.service-h2::after {
   left: 3%;
@@ -18827,7 +18830,7 @@ button.menu.rts-btn.btn-primary-3-menu:hover .menu-light {
 .banner-three::before {
   position: absolute;
   content: "";
-  background-image: url(../images/banner/shape/04.png);
+  /*background-image: url(../images/banner/shape/04.png);*/
   height: 100%;
   width: 650px;
   background-size: cover;
@@ -21778,6 +21781,10 @@ p.disc.banner-para {
   background-position: center;
   object-fit: contain;
   background-size: cover;
+}
+
+.cta-homepage{
+    background-color: #4e7fa8;
 }
 
 .rts-cta-bg {
@@ -29376,6 +29383,11 @@ p.disc {
   width: 193.03px;
   height: 193.03px;
 }
+.rts-working-process-1.process-lg .inner .icon .fonts{
+    font-size: 40px;
+    color: #0b4df6;
+
+}
 .rts-working-process-1:hover .inner {
   border: 2px dashed var(--color-primary-2);
 }
@@ -29477,7 +29489,7 @@ p.disc {
 }
 
 .index-seven .rts-title-area.gallery::after {
-  content: "Gallery";
+  content: "Jobs";
   left: 18%;
   transform: translateX(-50%);
   z-index: -1;
@@ -29636,6 +29648,15 @@ p.disc {
   box-sizing: border-box;
   -webkit-transition: all 200ms linear;
   transition: all 200ms linear;
+}
+
+.client-image{
+    width: 190px;
+    height: 90px;
+}
+
+.line-height-30{
+    line-height: 30px;
 }
 
 .home-blue .progress-wrap svg.progress-circle path {

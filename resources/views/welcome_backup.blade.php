@@ -572,7 +572,7 @@
             <div class="auto-container">
                 <!--Sec Title-->
                 <div class="sec-title">
-                    <h2>Latest zemen News</h2>
+                    <h2>Latest News</h2>
                     <div class="title-text">Automate & Simplify The Whole Process</div>
                 </div>
                 <div class="row clearfix">
