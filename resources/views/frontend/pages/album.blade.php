@@ -3,51 +3,43 @@
 @section('styles')
 @endsection
 @section('content')
-    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Our Albums</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
-                <li>Album</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="portfolio-page-section">
-        <div class="auto-container">
-            @if(count(@$albums) > 0)
-                <div class="mixitup-gallery">
-                <div class="row clearfix">
-                    @foreach($albums as $album)
-                        <div class="gallery-block col-lg-4 col-md-4 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <img src="{{asset('/images/albums/'.@$album->cover_image)}}" alt="" />
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <a href="{{route('album.gallery',$album->slug)}}" class="link">
-                                                    <span class="icon fa fa-link" style="margin-top: 15px;"></span>
-                                                </a>
-                                                <a href="{{asset('/images/albums/'.@$album->cover_image)}}" data-fancybox="gallery-images-1" data-caption="" class="link">
-                                                    <span class="icon fa fa-search" style="margin-top: 15px;"></span></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="{{route('album.gallery',$album->slug)}}">{{ucwords(@$album->name)}}</a></h3>
-                                    <div class="designation">
-                                        Images: ({{count(@$album->gallery)}})
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Albums</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">Our album</a>
+                    </div>
                 </div>
             </div>
-            @endif
+        </div>
+    </div>
+
+    <section class="portfolio-area style-4 pt--120 pb--120 pt_xs--60 pt_xs--60">
+        <div class="container">
+            <div class="row">
+                @foreach($albums as $album)
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="item">
+                            <div class="portfolio-wrapper">
+                                <div class="img-fluid">
+                                    <img class="lazy" data-src="{{asset('/images/albums/'.@$album->cover_image)}}" alt="" />
+                                </div>
+                                <div class="single-portfolio">
+                                    <span>Images: ({{count(@$album->gallery)}})</span>
+                                    <h4 class="portfolio-title text-white">{{ucwords(@$album->name)}}</h4>
+                                </div>
+                                <a class="pf-btn" href="{{route('album.gallery',$album->slug)}}"><i class="fal fa-long-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </section>
 @endsection

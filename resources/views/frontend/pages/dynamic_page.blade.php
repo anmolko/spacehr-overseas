@@ -232,38 +232,39 @@
         @endif
 
         @if($value == "gallery_section")
-            <section class="portfolio-page-section">
-                <div class="auto-container">
+            <section class="portfolio-area style-4 pt--120 pb--120 pt_xs--60 pt_xs--60">
+                <div class="container">
                     @if(@$heading!==null)
-                        <div class="sec-title centered" style="margin-bottom: 25px;">
-                            <div class="title-text">{{@$subheading ?? ''}}</div>
-                            <h2>{{@$heading}}</h2>
-                        </div>
-                    @endif
-                    @if(count(@$gallery_elements) > 0)
-                        <div class="mixitup-gallery">
-                            <div class="row clearfix">
-                                @foreach(@$gallery_elements as $gallery_element)
-                                    <div class="gallery-block col-lg-4 col-md-4 col-sm-12">
-                                        <div class="inner-box">
-                                            <div class="image">
-                                                <img class="img-wrapper" src="{{asset('/images/section_elements/gallery/'.@$gallery_element->filename)}}" alt="" />
-                                                <!--Overlay Box-->
-                                                <div class="overlay-box">
-                                                    <div class="overlay-inner">
-                                                        <div class="content">
-                                                            <a href="{{asset('/images/section_elements/gallery/'.@$gallery_element->filename)}}" data-fancybox="gallery-images-1" data-caption="" class="link">
-                                                                <span class="icon fa fa-search" style="margin-top: 15px;"></span></a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
+                        <div class="col-12">
+                            <div class="text-center title-service-three">
+                                <p class="pre-title">
+                                    {{@$subheading ?? ''}}
+                                </p>
+                                <h2 class="title">{{@$heading}}</h2>
                             </div>
                         </div>
                     @endif
+                    <div class="row">
+                        @if(count(@$gallery_elements-) > 0)
+                            <div id="gallery" style="padding: 0px 30px 0 30px;">
+                                <div id="image-gallery">
+                                    <div class="row">
+                                        @foreach(@$gallery_elements as $gallery_element)
+                                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                                <div class="img-wrapper">
+                                                    <a href="{{asset('/images/section_elements/gallery/'.@$gallery_element->filename)}}">
+                                                        <img data-src="{{asset('/images/section_elements/gallery/'.@$gallery_element->filename)}}" class="img-responsive lazy"></a>
+                                                    <div class="img-overlay">
+                                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div><!-- End row -->
+                                </div><!-- End image gallery -->
+                            </div><!-- End container -->
+                        @endif
+                    </div>
                 </div>
             </section>
         @endif

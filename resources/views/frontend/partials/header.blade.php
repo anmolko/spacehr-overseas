@@ -166,7 +166,7 @@
                         </nav>
                         <div class="button-area">
                             <button id="search" class="rts-btn btn-primary-alta"><i class="fa fa-search"></i></button>
-                            <a href="#" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
+                            <a href="{{ route('contact') }}" class="rts-btn btn-primary ml--20 ml_sm--5 header-one-btn quote-btn">Get Quote</a>
                             <button id="menu-btn" class="menu rts-btn btn-primary-alta ml--20 ml_sm--5">
                                 <img class="menu-dark lazy" data-src="{{ asset('assets/frontend/images/icon/menu.png') }}" alt="Menu-icon">
                                 <img class="menu-light lazy" data-src="{{ asset('assets/frontend/images/icon/menu-light.png') }}" alt="Menu-icon">

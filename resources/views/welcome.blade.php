@@ -451,7 +451,7 @@
                                                 <img class="lazy" data-src="{{asset('/images/testimonial/'.@$testimonial->image)}}" alt="">
                                             </a>
                                             <div class="discription">
-                                                <a href="#">
+                                                <a>
                                                     <h6 class="title">{{ucfirst($testimonial->name)}}</h6>
                                                 </a>
                                                 <span>{{ucfirst($testimonial->position)}}</span>
