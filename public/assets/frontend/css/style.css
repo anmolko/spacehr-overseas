@@ -28154,11 +28154,12 @@ p.disc.banner-para {
   background: #F6F6F6;
 }
 .background-contact-appoinment .contact-form-area-one {
-  background-image: url(../images/appoinment/03.png);
-  background-size: cover;
+  /*background-image: url(../images/appoinment/03.png);*/
+  /*background-size: cover;*/
   background-repeat: no-repeat;
+  background: #133557;
   background-position: center left;
-  background-color: rgba(255, 255, 255, 0);
+  /*background-color: rgba(255, 255, 255, 0);*/
   padding: 165px 120px 120px 120px;
   margin-left: -26px;
 }
@@ -30812,3 +30813,7 @@ p.disc {
     font-size: 18px;
 }
 
+.custom-fs-line{
+    font-size: 18px;
+    line-height: 28px;
+}

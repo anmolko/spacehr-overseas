@@ -521,7 +521,7 @@
                     <div class="col-lg-6">
                         <div class="about-image-v-inner">
                             <div class="image-area">
-                                <iframe src="{{@$setting_data->google_map}}"
+                                <iframe src="{{@$setting_data->google_map ?? ''}}"
                                         width="600" height="600" style="border:0;"
                                         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>

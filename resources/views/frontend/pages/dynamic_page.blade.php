@@ -3,12 +3,17 @@
 @section('css')
     <style>
 
-    .img-wrapper {
-          height: 270px;
-        object-fit: cover;
-      }
+        .img-wrapper {
+            height: 270px;
+            object-fit: cover;
+        }
+        #gallery img.img-responsive {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
-  <link rel="stylesheet" href="{{asset('assets/frontend/css/lightbox.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/plugins/lightbox.css')}}">
 
 @endsection
 @section('content')
@@ -74,161 +79,181 @@
         @endif
 
         @if($value == "call_to_action_1")
-            <section class="call-to-action-two" style="background-image: url({{asset('assets/frontend/images/background/3.jpg')}})">
-                <div class="auto-container">
-                    <h2>{{ucfirst(@$call1_elements->heading)}}</h2>
-                    <div class="text">{{ucfirst(@$call1_elements->subheading)}} </div>
-                    <a href="{{@$call1_elements->button_link ?? '/contact-us'}}" class="theme-btn btn-style-five">{{ucwords(@$call1_elements->button ?? 'Get in touch')}}</a>
+            <div class="rts-callto-acation-area rts-callto-acation-area4 bg-call-to-action-two mb--80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="cta-two-wrapper">
+                                <div class="title-area">
+                                    <h3 class="title animated fadeIn">{{ ucfirst($call1_elements->heading ?? '') }}</h3>
+                                </div>
+                                <a class="rts-btn btn-secondary-3" href="{{@$call1_elements->button_link ?? '/contact-us'}}">{{ucwords(@$call1_elements->button ?? 'Lets Work Together')}}</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
         @endif
 
         @if($value == "background_image_section")
-            <section class="task-section">
-                <div class="auto-container">
-                    <div class="row clearfix">
-
-                        <!--Image Column-->
-                        <div class="image-column col-lg-4 col-md-12 col-sm-12">
-                            <div class="inner-column">
-                                <div class="image">
-                                    <img src="{{asset('/images/section_elements/bgimage_section/'.@$bgimage_elements->image)}}" alt="" />
-                                </div>
+            <div class="rts-contact-area contact-one appoinment background-contact-appoinment">
+                <div class="">
+                    <div class="row g-0 align-items-center">
+                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+                            <div class="contact-image-one appoinment">
+                                <img src="{{asset('/images/section_elements/bgimage_section/'.@$bgimage_elements->image)}}" alt="">
                             </div>
                         </div>
-
-                        <!--Content Column-->
-                        <div class="content-column col-lg-8 col-md-12 col-sm-12">
-                            <div class="inner-column">
-                                <div class="title">{{@$bgimage_elements->subheading ?? ''}}</div>
-                                <h2>{{@$bgimage_elements->heading ?? ''}}</h2>
-
-                                <!--Featured Block Two-->
-                                <div class="feature-block-two alternate">
-                                    <div class="inner-box custom-box">
-                                        <div class="text">
-                                            {{ @$bgimage_elements->description }} </div>
-                                    </div>
+                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+                            <div class="contact-form-area-one">
+                                <div class="rts-title-area contact-appoinment text-start">
+                                    <p class="pre-title">
+                                        {{@$bgimage_elements->subheading ?? ''}}
+                                    </p>
+                                    <h2 class="title">{{@$bgimage_elements->heading ?? ''}}</h2>
                                 </div>
-
+                                <p class="disc custom-fs-line text-justify text-white">
+                                    {{ @$bgimage_elements->description }}
+                                </p>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
         @endif
 
         @if($value == "flash_cards")
-            <section class="planning-section">
-                <div class="auto-container">
-                    <!--Sec Title-->
-                    <div class="sec-title centered">
-                        <div class="title-text">{{$flash_elements[0]->subheading}}</div>
-                        <h2>{{@$flash_elements[0]->heading}}</h2>
+            <div class="rts-service-area rts-service-area5" style="margin-top: 50px; margin-bottom: 50px">
+                <div class="container">
+                    <div class="col-12">
+                        <div class="text-center title-service-three">
+                            <p class="pre-title">
+                                {{$flash_elements[0]->subheading}}
+                            </p>
+                            <h2 class="title">{{@$flash_elements[0]->heading}}</h2>
+                        </div>
                     </div>
-
-                    <div class="row clearfix">
+                    <div class="row g-5 mt--20">
                         @foreach(@$flash_elements as $index=>$flash_element)
-                            <div class="services-block alternate col-lg-4 col-md-6 col-sm-12">
-                                <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                    <h3><a>{{ucwords(@$flash_element->list_header)}}</a></h3>
-                                    <div class="icon-box">
-                                        <span class="icon {{get_icons($index)}}"></span>
-                                    </div>
-                                    <div class="text">
-                                        {{ucfirst(@$flash_element->list_description) }}
-                                    </div>
-                                    <div class="more-link"><a class="read-more"><span class="arrow fa fa-angle-right"></span> Space HR solution </a></div>
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                            <div class="service-one-inner-four">
+                                <a href="#" class="icon">
+                                    <img src="{{asset('assets/frontend/images/service/icon/service-logo'.($index+1).'.svg')}}" alt="">
+                                </a>
+                                <div class="content">
+                                    <h5 class="title">{{ucwords(@$flash_element->list_header)}}</h5>
+                                    <p class="disc text-justify"> {{ucfirst(@$flash_element->list_description) }}
+                                    </p>
                                 </div>
+
                             </div>
+                        </div>
                         @endforeach
                     </div>
-
                 </div>
-            </section>
+            </div>
         @endif
 
         @if($value == "simple_header_and_description")
-            <div class="page-container header-description ">
+            <div class="rts-service-details-area rts-section-gap">
                 <div class="container">
                     @if(@$header_descp_elements->heading!==null)
-                        <div class="sec-title centered mt-5" style="margin-bottom: 25px;">
-                            <div class="title-text">{{@$header_descp_elements->subheading ?? ''}}</div>
-                            <h2>{{@$header_descp_elements->heading}}</h2>
-                        </div>
-                    @endif
-                    <div class="row clearfix content-section">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <div class="text">
-                                {!! @$header_descp_elements->description !!}
+                        <div class="col-12">
+                            <div class="text-center title-service-three">
+                                <p class="pre-title">
+                                    {{@$header_descp_elements->subheading ?? ''}}
+                                </p>
+                                <h2 class="title">{{@$header_descp_elements->heading}}</h2>
                             </div>
                         </div>
-
+                    @endif
+                    <div class="row">
+                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                            <!-- service details left area start -->
+                            <div class="service-detials-step-1">
+                                <div class="disc custom-description text-justify">
+                                    {!! @$header_descp_elements->description !!}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         @endif
 
         @if($value == "map_and_description")
-            <section class="fluid-section-two">
-                <div class="outer-container clearfix">
-
-                    @if(@$setting_data->google_map)
-                        <!--Image Column-->
-                        <div class="image-column" style="">
-                            <iframe src="{{@$setting_data->google_map}}" style="border:0;width: 100%;height: 100%;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="rts-about-area rts-section-gap bg-light-white">
+                <div class="container">
+                    <div class="row g-5 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="about-progress-inner">
+                                <div class="title-area">
+                                    <span>{{@$map_descp->subheading}}</span>
+                                    <h2 class="title">{{@$map_descp->heading}}</h2>
+                                </div>
+                                <!-- inner start -->
+                                <div class="inner">
+                                    <div class="disc fs-18 text-justify line-height-30">
+                                        {!! ucfirst(@$map_descp->description) !!}}</div>
+                                    @if(@$map_descp->button_link)
+                                        <a href="{{@$map_descp->button_link}}" class="rts-btn btn-primary">{{ucwords(@$map_descp->button ?? 'Reach out')}}</a>
+                                    @endif
+                                </div>
+                                <!-- end -->
+                            </div>
                         </div>
-                    @endif
-
-                    <!--Content Column-->
-                    <div class="content-column">
-                        <div class="inner-column">
-                            <!--Sec Title-->
-                            <div class="sec-title light" style="margin-bottom: 25px;">
-                                <div class="title-text">Space HR solution</div>
-                                <h2>{{@$map_descp->heading}}</h2>
+                        <div class="col-lg-6">
+                            <div class="about-image-v-inner">
+                                <div class="image-area">
+                                    <iframe src="{{@$setting_data->google_map ?? ''}}"
+                                            width="600" height="600" style="border:0;"
+                                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </div>
                             </div>
-
-                            <!-- Support Form -->
-                            <div class="support-form light-description mb-3">
-                                {!! ucfirst(@$map_descp->description) !!}
-                            </div>
-                            @if(@$map_descp->button_link)
-                                <a href="{{@$map_descp->button_link}}" class="theme-btn btn-style-five mt-2">{{ucwords(@$map_descp->button ?? 'Reach out')}}</a>
-                            @endif
                         </div>
                     </div>
-
                 </div>
-            </section>
+            </div>
         @endif
 
         @if($value == "small_box_description")
-            <section class="services-section-three">
-                <div class="auto-container">
-                    <div class="sec-title centered mt-5" style="margin-bottom: 25px;">
-                        <div class="title-text"> {{ ucfirst($process_elements[0]->subheading ?? 'Advance Solutions')}}</div>
-                        <h2>{{@$process_elements[0]->heading}}</h2>
-                    </div>
-
-
-                    <div class="row clearfix">
-                    @for ($i = 1; $i <=@$process_num; $i++)
-                        <div class="feature-block alternate col-lg-4 col-md-6 col-sm-12">
-                            <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                <div class="icon-box">
-                                    <span class="icon {{get_solution_icons($i-1)}}"></span>
-                                </div>
-                                <h3><a>{{ucwords(@$process_elements[$i-1]->list_header ??'')}}</a></h3>
-                                <div class="text"> {{ucfirst(@$process_elements[$i-1]->list_description)}}</div>
+            <div class="rts-service-area rts-section-gap" style="padding: 75px 0;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <p class="pre-title" style="margin: 0 0 18px;">
+                                    {{ ucfirst($process_elements[0]->subheading ?? 'Advanced Solutions')}}
+                                </p>
+                                <h2 class="title">{{@$process_elements[0]->heading}}</h2>
                             </div>
                         </div>
-                    @endfor
+                    </div>
+                    <div class="row g-5 mt--10">
+                        @for ($i = 1; $i <=@$process_num; $i++)
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                <!-- single service for home six -->
+                                <div class="single-service-home-six">
+                                    <div class="icon">
+                                        <img src="{{asset('assets/frontend/images/'. get_solution_icons($i-1))}}" alt="">
+                                    </div>
+                                    <div class="inner">
+                                        <h5 class="title">
+                                            {{ucwords(@$process_elements[$i-1]->list_header ??'')}}
+                                        </h5>
+                                        <p class="disc">
+                                            {{ucfirst(@$process_elements[$i-1]->list_description)}}
+                                        </p>
 
+                                    </div>
+                                </div>
+                                <!-- single service for home six End -->
+                            </div>
+                        @endfor
                     </div>
                 </div>
-            </section>
+            </div>
         @endif
 
         @if($value == "gallery_section")
@@ -245,13 +270,13 @@
                         </div>
                     @endif
                     <div class="row">
-                        @if(count(@$gallery_elements-) > 0)
+                        @if(count(@$gallery_elements) > 0)
                             <div id="gallery" style="padding: 0px 30px 0 30px;">
                                 <div id="image-gallery">
                                     <div class="row">
                                         @foreach(@$gallery_elements as $gallery_element)
                                             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
-                                                <div class="img-wrapper">
+                                                <div class="{{  $page_detail->slug =='legal-document' || $page_detail->slug =='legal-documents' ? "":"img-wrapper"   }}">
                                                     <a href="{{asset('/images/section_elements/gallery/'.@$gallery_element->filename)}}">
                                                         <img data-src="{{asset('/images/section_elements/gallery/'.@$gallery_element->filename)}}" class="img-responsive lazy"></a>
                                                     <div class="img-overlay">
@@ -270,49 +295,44 @@
         @endif
 
         @if($value == "slider_list")
-            <section class="stories-section" style="background-image: url({{asset('assets/frontend/images/background/4.jpg')}})">
-                <div class="auto-container">
-                    <div class="row clearfix">
-
-                        <!--Title Column-->
-                        <div class="title-column col-lg-4 col-md-12 col-sm-12">
-                            <div class="inner-column">
-                                <div class="sec-title light">
-                                    <h2>{{ucwords(@$slider_list_elements[0]->heading)}}</h2>
-                                </div>
-                                <div class="text">
-                                    {{ucwords(@$slider_list_elements[0]->description)}}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--Blocks Column-->
-                        <div class="blocks-column col-lg-8 col-md-12 col-sm-12">
-                            <div class="inner-column">
-                                <div class="two-item-carousel owl-carousel owl-theme">
-
-                                    @for ($i = 1; $i <=@$list_3; $i++)
-                                        <div class="story-block">
-                                            <div class="inner-box">
-                                                <div class="image">
-                                                    <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}"><img src="{{ asset('/images/section_elements/list_1/thumb/thumb_'.$slider_list_elements[$i-1]->list_image) }}" alt="" /></a>
-                                                </div>
-                                                <div class="lower-content">
-                                                    <h3><a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}"> {{ucwords(@$slider_list_elements[$i-1]->list_header)}}</a></h3>
-                                                    <a class="read-more" href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}">
-                                                        <span class="fa fa-angle-right"></span> Read more</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endfor
-                                </div>
-
-                            </div>
-                        </div>
-
+            <div class="rts-business-case rts-section-gap business-case-bg-2">
+            <div class="container">
+                <div class="row">
+                    <div class="title-areas text-center business-case">
+                        <span>{{ucwords(@$slider_list_elements[0]->description)}}</span>
+                        <h2 class="title">{{ucwords(@$slider_list_elements[0]->heading)}}</h2>
                     </div>
                 </div>
-            </section>
+            </div>
+            <div class="container-cusiness-case-h2 mt--50">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper mySwiperh2_Business_Cases">
+                            <div class="swiper-wrapper">
+                                @for ($i = 1; $i <=@$list_3; $i++)
+                                    <div class="swiper-slide">
+                                        <div class="rts-business-case-s-2">
+                                            <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}" class="thumbnail">
+                                                <img src="{{ asset('/images/section_elements/list_1/thumb/thumb_'.$slider_list_elements[$i-1]->list_image) }}" alt="Business_case">
+                                            </a>
+                                            <div class="inner">
+                                                <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}">
+                                                    <h5 class="title">
+                                                        {{ucwords(@$slider_list_elements[$i-1]->list_header)}}
+                                                    </h5>
+                                                </a>
+                                                <span>  {{ elipsis(strip_tags(@$slider_list_elements[$i-1]->list_description))}}</span>
+                                            </div>
+                                            <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}" class="over_link"></a>
+                                        </div>
+                                    </div>
+                                @endfor
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         @endif
 
     @endforeach
@@ -320,12 +340,12 @@
 
 @endsection
 @section('js')
-  <script src="{{asset('assets/frontend/js/lightbox.min.js')}}"></script>
+    <script src="{{asset('assets/frontend/js/plugins/lightbox.min.js')}}"></script>
   <script>
       $( document ).ready(function() {
-          let selector = $('.content-section').find('table').length;
+          let selector = $('.custom-description').find('table').length;
           if(selector>0){
-              $('.content-section').find('table').addClass('table table-bordered');
+              $('.custom-description').find('table').addClass('table table-bordered');
           }
       });
   </script>
