@@ -49,7 +49,7 @@
                     <div class="bread-tag">
                         <a href="/">Home</a>
                         <span> / </span>
-                        <a href="{{route('service.frontend')}}">Service</a>
+                        <a href="{{route('service.frontend')}}" style="padding-left: 5px">Service</a>
                         <span> / </span>
                         <a href="#" class="active">{{@$singleService->title}}</a>
                     </div>

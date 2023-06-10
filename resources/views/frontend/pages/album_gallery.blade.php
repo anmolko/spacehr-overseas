@@ -28,7 +28,9 @@
                     <div class="bread-tag">
                         <a href="/">Home</a>
                         <span> / </span>
-                        <a href="#" class="active">Album Gallery</a>
+                        <a href="{{ route('album.index') }}" style="padding-left: 5px"> Albums</a>
+                        <span> / </span>
+                        <a href="" class="active">Album Gallery</a>
                     </div>
                 </div>
             </div>

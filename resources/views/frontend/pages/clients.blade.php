@@ -3,60 +3,62 @@
 @section('css')
     <style>
         .img-wrapper {
+            height: 100px;
+            object-fit: cover;
+        }
+        #gallery img.img-responsive {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
     </style>
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/plugins/lightbox.css')}}">
 @endsection
 @section('content')
-    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Our Clients</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
-                <li>Clients</li>
-            </ul>
-        </div>
-    </section>
 
-    <section class="portfolio-page-section">
-        <div class="auto-container">
-            @if(count(@$clients) > 0)
-                <div class="mixitup-gallery">
-                    <div class="row clearfix">
-                        @foreach($clients as $client)
-                            <div class="gallery-block col-lg-4 col-md-4 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <img class="img-wrapper" src="{{asset('/images/clients/'.@$client->image)}}" alt="" />
-                                        <!--Overlay Box-->
-                                        <div class="overlay-box">
-                                            <div class="overlay-inner">
-                                                <div class="content">
-                                                    <a href="{{asset('/images/clients/'.@$client->image)}}" data-fancybox="gallery-images-1" data-caption="" class="link">
-                                                        <span class="icon fa fa-search"></span></a>
-                                                </div>
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Our Clients</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">Clients</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="portfolio-area style-4 pt--120 pb--120 pt_xs--60 pt_xs--60">
+        <div class="container">
+            <div class="row">
+                @if(count(@$clients) > 0)
+                    <div id="gallery" style="padding: 0px 30px 0 30px;">
+                        <div id="image-gallery">
+                            <div class="row">
+                                @foreach($clients as $client)
+                                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 image">
+                                        <div class="img-wrapper">
+                                            <a href="{{asset('/images/clients/'.@$client->image)}}">
+                                                <img data-src="{{asset('/images/clients/'.@$client->image)}}" class="img-responsive lazy"></a>
+                                            <div class="img-overlay">
+                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="lower-content">
-                                        <h3><a href="{{ $client->link ?? '#' }}" target="{{ ($client->link !== null) ? '_blank':'' }}">
-                                                {{@$client->name ?? ''}}
-                                            </a></h3>
-                                        <div class="designation">
-                                            {{ get_country($client->country) }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            @endif
+                                @endforeach
+                            </div><!-- End row -->
+                        </div><!-- End image gallery -->
+                    </div><!-- End container -->
+                @endif
+            </div>
         </div>
     </section>
-
-
-
 @endsection
 @section('js')
+    <script src="{{asset('assets/frontend/js/plugins/lightbox.min.js')}}"></script>
 @endsection

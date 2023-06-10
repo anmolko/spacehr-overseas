@@ -2,22 +2,6 @@
 @section('title')  Page Not Found @endsection
 @section('content')
 
-    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
-                    <h1 class="title">Not found</h1>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="bread-tag">
-                        <a href="/">Home</a>
-                        <span> / </span>
-                        <a href="#" class="active">404 Error</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="rts-404-area rts-section-gap">
         <div class="container">

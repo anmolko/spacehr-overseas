@@ -30,7 +30,7 @@
                     <div class="bread-tag">
                         <a href="/">Home</a>
                         <span> / </span>
-                        <a href="{{route('job.list')}}">Jobs</a>
+                        <a href="{{route('job.list')}}" style="padding-left: 5px">Jobs</a>
                         <span> / </span>
                         <a class="active">{{ @$singleJob->name }}</a>
                     </div>
