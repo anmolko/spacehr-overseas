@@ -22099,7 +22099,7 @@ p.disc.banner-para {
   width: 100%;
 }
 .case-study-area .item .item-content {
-  padding: 0 25px 25px 25px;
+  padding: 0 25px 0px 25px;
 }
 .case-study-area .item .item-content h6 {
   color: #999;
@@ -27047,39 +27047,39 @@ p.disc.banner-para {
   color: #fff;
   transform: translateY(-2px) scale(1.02);
 }
-.blog-single-post-listing.details .details-share {
+.details-share {
   display: flex;
   align-items: center;
   justify-content: flex-end;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .blog-single-post-listing.details .details-share {
+ .details-share {
     justify-content: flex-start;
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 767px) {
-  .blog-single-post-listing.details .details-share {
+ .details-share {
     justify-content: flex-start;
     margin-top: 30px;
   }
 }
 @media only screen and (max-width: 575px) {
-  .blog-single-post-listing.details .details-share {
+ .details-share {
     justify-content: flex-start;
     margin-top: 20px;
   }
 }
-.blog-single-post-listing.details .details-share button {
+ .details-share button, .details-share a {
   max-width: max-content;
   position: relative;
   z-index: 1;
-  margin-left: 23px;
+  margin-left: 35px;
   color: #1C2539;
   transition: 0.3s;
   font-size: 14px;
 }
-.blog-single-post-listing.details .details-share button::after {
+.details-share button::after, .details-share a::after {
   position: absolute;
   content: "";
   background: #F6F6F6;
@@ -27092,14 +27092,15 @@ p.disc.banner-para {
   z-index: -1;
   transition: 0.3s;
 }
-.blog-single-post-listing.details .details-share button:hover {
-  color: #fff;
+
+ .details-share button:hover, .details-share a:hover {
+  color: #fff !important;
   transform: scale(1.2);
 }
-.blog-single-post-listing.details .details-share button:hover::after {
+.details-share button:hover::after, .details-share a:hover::after{
   background: var(--color-primary);
 }
-.blog-single-post-listing.details .details-share h6 {
+.details-share h6 {
   font-size: 18px;
   margin-bottom: 0;
   margin-right: 15px;

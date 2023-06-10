@@ -14,6 +14,8 @@
                     <div class="bread-tag">
                         <a href="/">Home</a>
                         <span> / </span>
+                        <a href="{{route('blog.frontend')}}">Blog</a>
+                        <span> / </span>
                         <a href="#" class="active">Searched for : {{$query}}</a>
                     </div>
                 </div>

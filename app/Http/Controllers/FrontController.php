@@ -294,21 +294,13 @@ class FrontController extends Controller
         return view('frontend.pages.sliderlist.single',compact('singleSlider','slider_lists'));
     }
 
-
-    public function work(){
-        $our_works = $this->our_work->get();
-        return view('frontend.pages.work',compact('our_works'));
-    }
-
-
     public function blogs(){
         $bcategories = $this->bcategory->withCount('blogs')->having('blogs_count', '>', 0)->get();
-        $allPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->paginate(2);
+        $allPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->paginate(6);
         $latestPosts = $this->blog->orderBy('created_at', 'DESC')->where('status','publish')->take(3)->get();
 
         return view('frontend.pages.blogs.index',compact('allPosts','latestPosts','bcategories'));
     }
-
 
     public function blogSingle($slug){
 
@@ -360,32 +352,30 @@ class FrontController extends Controller
 
     }
 
-
-
-
     public function contactStore(Request $request)
     {
         $theme_data = Setting::first();
             $data = array(
-                'fullname'        =>$request->input('name'),
-                'message'        =>$request->input('message'),
-                'email'        =>$request->input('email'),
-                'subject'        =>$request->input('subject'),
-                'customer_phone'        =>$request->input('phone'),
-                'address'        =>ucwords($theme_data->address),
-                'site_email'        =>ucwords($theme_data->email),
-                'site_name'        =>ucwords($theme_data->website_name),
-                'phone'        =>ucwords($theme_data->phone),
-                'logo'        =>ucwords($theme_data->logo),
+                'fullname'          => $request->input('name'),
+                'message'           => $request->input('message'),
+                'email'             => $request->input('email'),
+                'subject'           => $request->input('subject'),
+                'customer_phone'    => $request->input('phone'),
+                'address'           => ucwords($theme_data->address),
+                'site_email'        => ucwords($theme_data->email),
+                'site_name'         => ucwords($theme_data->website_name),
+                'phone'             => ucwords($theme_data->phone),
+                'logo'              => ucwords($theme_data->logo),
             );
-//        Mail::to('anmolkoirala1313@gmail.com')->send(new ContactDetail($data));
 
-//            if($theme_data->email){
-//                Mail::to($theme_data->email)->send(new ContactDetail($data));
-//            }
+            if(!app()->environment('local')){
+                Mail::to($theme_data->email)->send(new ContactDetail($data));
+            }
+
             $status ='success';
             return response()->json($status);
     }
+
     public function careerSingle($slug){
 
         $singleCareer = $this->career->where('slug', $slug)->first();
@@ -394,53 +384,6 @@ class FrontController extends Controller
         }
 
         return view('frontend.pages.careers.single',compact('singleCareer'));
-    }
-
-    public function package(){
-        $allpackages = $this->pojectPlan->get();
-        return view('frontend.pages.package',compact('allpackages'));
-    }
-
-    public function packageStore(Request $request)
-    {
-        $data = [
-            'project_plan_id'   => $request->input('project_plan_id'),
-            'email'             => $request->input('email'),
-            'phone'             => $request->input('phone'),
-            'full_name'         => $request->input('full_name'),
-        ];
-        $status = $this->customer_package->create($data);
-
-//         $theme_data = Setting::first();
-//             $mail_data = array(
-//                 'fullname'        =>$request->input('name'),
-//                 'order_name'        =>$request->input('order_name'),
-//                 'phone'        =>$request->input('phone'),
-//                 'address'        =>ucwords($theme_data->address),
-//                 'site_email'        =>ucwords($theme_data->email),
-//                 'site_name'        =>ucwords($theme_data->website_name),
-//                 'phone'        =>ucwords($theme_data->phone),
-//                 'logo'        =>ucwords($theme_data->logo),
-//             );
-// //             Mail::to($theme_data->email)->send(new PackageDetail($mail_data));
-
-            if($status){
-                Session::flash('success','Thank you for ordering package. We will get back to you soon');
-                $confirmed = "success";
-                $plan      = ProjectPlan::find($request->input('project_plan_id'));
-                foreach (User::where('user_type','admin')->get() as $user){
-                    Notification::send($user, new OtherNotification('package',$plan->name,$plan->id,$status->full_name));
-                }
-                return redirect()->back();
-            }
-            else{
-                Session::flash('error','Failed to order package');
-                $confirmed = "error";
-                return redirect()->back();
-            }
-
-
-
     }
 
     public function serviceSingle($slug){
@@ -457,7 +400,7 @@ class FrontController extends Controller
 
     public function jobs(){
         $today      = date('Y-m-d');
-        $alljobs    = Job::orderBy('created_at', 'DESC')->where('start_date','<=',$today)->paginate(9);
+        $alljobs    = Job::orderBy('created_at', 'DESC')->where('start_date','<=',$today)->paginate(6);
         $category   = JobCategory::all();
         $latestJobs = Job::orderBy('created_at', 'DESC')->where('start_date','<=',$today)->take(3)->get();
 

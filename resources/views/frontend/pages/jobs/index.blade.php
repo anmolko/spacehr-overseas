@@ -14,54 +14,58 @@
 @endsection
 @section('content')
 
-    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Recent Jobs</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
-                <li>All Jobs</li>
-            </ul>
+    <!-- start breadcrumb area -->
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Job List</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">Our Jobs</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
 
-    <section class="portfolio-page-section">
-        <div class="auto-container">
-            <div class="mixitup-gallery">
-                <div class="row clearfix">
-                    @foreach($alljobs as $job)
-                        <div class="gallery-block col-lg-4 col-md-4 col-sm-12">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <img src="{{ ($job->image !== null) ? asset('/images/job/thumb/thumb_'.@$job->image): asset('assets/frontend/images/md_human.png')}}" alt="" />
-                                    <!--Overlay Box-->
-                                    <div class="overlay-box">
-                                        <div class="overlay-inner">
-                                            <div class="content">
-                                                <a href="{{route('job.single',@$job->slug)}}" class="link">
-                                                    <span class="icon fa fa-link" style="margin-top: 15px;"></span>
-                                                </a>
-                                                <a href="{{ ($job->image !== null) ? asset('/images/job/'.@$job->image): asset('assets/frontend/images/md_human.png')}}" data-fancybox="gallery-images-1" data-caption="" class="link">
-                                                    <span class="icon fa fa-search" style="margin-top: 15px;"></span></a>
-                                            </div>
-                                        </div>
+    <section class="case-study-area case-bg2 nav-style-1 pt--115 pt_md--60 pt_xs--60 pb--115 pb_md--60 pb_xs--60">
+        <div class="container">
+            <div class="row g-5">
+                <!-- rts blo post area -->
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <div class="row">
+                        @foreach($alljobs as $job)
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="item">
+                                <div class="cases-wrapper2">
+                                    <div class="item-image">
+                                        <img src="{{ ($job->image !== null) ? asset('/images/job/thumb/thumb_'.@$job->image): asset('assets/frontend/images/space.png')}}" alt="Image">
                                     </div>
-                                </div>
-                                <div class="lower-content">
-                                    <h3><a href="{{route('job.single',@$job->slug)}}">{{ucfirst($job->name)}}</a></h3>
-                                    <div class="designation">
-                                        @if(@$job->end_date >= $today)
-                                            {{date('M j, Y',strtotime(@$job->start_date))}} - {{date('M j, Y',strtotime(@$job->end_date))}}
-                                        @else
-                                            Expired
-                                        @endif
+                                    <div class="item-content">
+                                        <h6>
+                                            @if(@$job->end_date >= $today)
+                                                {{date('M j, Y',strtotime(@$job->start_date))}} - {{date('M j, Y',strtotime(@$job->end_date))}}
+                                            @else
+                                                Expired
+                                            @endif
+                                        </h6>
+                                        <h5 class="fs-20 text-heding3">{{ucfirst($job->name)}}</h5>
                                     </div>
+                                    <a href="{{route('job.single',@$job->slug)}}" class="read-more">View details <span class="f-right"><i class="fa fa-long-arrow-right"></i></span></a>
                                 </div>
                             </div>
                         </div>
-                    @endforeach
+                        @endforeach
+                        {{ $alljobs->links('vendor.pagination.simple-bootstrap-4') }}
+                    </div>
                 </div>
-                <div class="styled-pagination text-center">
-                    {{ $alljobs->links('vendor.pagination.default') }}
+
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12">
+                    @include('frontend.pages.jobs.sidebar')
                 </div>
             </div>
         </div>

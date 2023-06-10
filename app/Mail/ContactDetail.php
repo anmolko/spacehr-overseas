@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Setting;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -30,6 +31,7 @@ class ContactDetail extends Mailable
      */
     public function build()
     {
-        return $this->subject('New Customer Enquiry - Life International Overseas')->view('frontend.template.email_template');
+        $setting = Setting::first();
+        return $this->subject('New Customer Enquiry - '.$setting->website_name)->view('frontend.template.email_template');
     }
 }
