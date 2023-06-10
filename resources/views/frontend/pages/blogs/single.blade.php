@@ -17,91 +17,106 @@
     <meta property="og:image:size" content="300" />
 @endsection
 @section('content')
-    <section class="page-title" style="background-image: url({{asset('/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Blog details</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li><a href="{{route('blog.frontend')}}">Blog</a></li>
-                <li>{{ @$singleBlog->title }}</li>
-            </ul>
-        </div>
-    </section>
-
-    <div class="sidebar-page-container">
-        <div class="auto-container">
-            <div class="row clearfix">
-
-                <!--Sidebar Side-->
-                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-                    @include('frontend.pages.blogs.sidebar')
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Blog List</h1>
                 </div>
-
-                <!--Content Side-->
-                <div class="content-side col-lg-8 col-md-12 col-sm-12">
-                    <div class="blog-single">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{ asset('/images/blog/'.@$singleBlog->image) }}" alt="" />
-                            </div>
-                            <div class="lower-content">
-                                <div class="clearfix">
-                                    <div class="pull-left">
-                                        <ul class="post-meta clearfix">
-                                            <li>{{@$singleBlog->category->name }}</li>
-                                            <li><span class="icon fa fa-calendar"></span> {{date('j M, Y',strtotime(@$singleBlog->created_at))}}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h2>{{ ucwords(@$singleBlog->title) }}</h2>
-                                <div class="text">
-                                    {!! $singleBlog->description !!}
-                                </div>
-                                <div class="post-share-options">
-                                    <div class="post-share-inner clearfix">
-                                        <ul class="pull-right info-links clearfix">
-                                            <li>
-                                                <a href="#"><i class="fa fa-facebook" onclick='fbShare("{{route('blog.single',$singleBlog->slug)}}")'></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-twitter"  onclick='twitShare("{{route('blog.single',$singleBlog->slug)}}","{{ $singleBlog->title }}")'></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-whatsapp" onclick='whatsappShare("{{route('blog.single',$singleBlog->slug)}}","{{ $singleBlog->title }}")'></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="{{route('blog.frontend')}}">Blog</a>
+                        <span> / </span>
+                        <a class="active">{{ @$singleBlog->title }}</a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 
+    <div class="rts-blog-list-area rts-section-gap">
+        <div class="container">
+            <div class="row g-5">
+
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <div class="blog-single-post-listing details mb--0">
+                        <div class="thumbnail">
+                            <img class="lazy" data-src="{{ asset('/images/blog/'.@$singleBlog->image)}}" alt="">
+                        </div>
+                        <div class="blog-listing-content">
+                            <div class="user-info">
+                                <!-- single infoe end -->
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="fa fa-clock"></i>
+                                    <span>{{date('j M, Y',strtotime(@$singleBlog->created_at))}}</span>
+                                </div>
+                                <!-- single infoe end -->
+                                <!-- single info -->
+                                <div class="single">
+                                    <i class="fa fa-tags"></i>
+                                    <span>{{@$singleBlog->category->name }}</span>
+                                </div>
+                                <!-- single infoe end -->
+                            </div>
+                            <h3 class="title">{{ ucwords(@$singleBlog->title) }}</h3>
+                            <div class="disc para-1 custom-description">
+                                {!! $singleBlog->description !!}
+                            </div>
+                            <div class="row  align-items-center">
+                                <div class="col-lg-6 col-md-12">
+                                    <!-- tags details -->
+                                    <div class="details-tag">
+                                    </div>
+                                    <!-- tags details End -->
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="details-share">
+                                        <h6>Share:</h6>
+                                        <button>
+                                            <a href="#"><i class="fab fa-facebook-f" onclick='fbShare("{{route('blog.single',$singleBlog->slug)}}")'></i></a>
+                                        </button>
+                                        <button>
+                                            <a href="#"><i class="fab fa-twitter"  onclick='twitShare("{{route('blog.single',$singleBlog->slug)}}","{{ $singleBlog->title }}")'></i></a>
+                                        </button>
+                                        <button>
+                                            <a href="#"><i class="fab fa-whatsapp" onclick='whatsappShare("{{route('blog.single',$singleBlog->slug)}}","{{ $singleBlog->title }}")'></i></a>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12 mt-5">
+                    @include('frontend.pages.blogs.sidebar')
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('js')
-<script>
-    function fbShare(url) {
-      window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=200, left=500, width=600, height=400");
-    }
-    function twitShare(url, title) {
-        window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(title) + "+" + url + "", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=200, left=500, width=600, height=400");
-    }
-    function whatsappShare(url, title) {
-        message = title + " " + url;
-        window.open("https://api.whatsapp.com/send?text=" + message);
-    }
-    $( document ).ready(function() {
-        let selector = $('.custom-description').find('table').length;
-        if(selector>0){
-            $('.custom-description').find('table').addClass('table table-bordered');
+    <script>
+
+        function fbShare(url) {
+          window.open("https://www.facebook.com/sharer/sharer.php?u=" + url, "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=200, left=500, width=600, height=400");
         }
-    });
+        function twitShare(url, title) {
+            window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(title) + "+" + url + "", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=200, left=500, width=600, height=400");
+        }
+        function whatsappShare(url, title) {
+            message = title + " " + url;
+            window.open("https://api.whatsapp.com/send?text=" + message);
+        }
+        $( document ).ready(function() {
+            let selector = $('.custom-description').find('table').length;
+            if(selector>0){
+                $('.custom-description').find('table').addClass('table table-bordered table-responsive');
+            }
+        });
 </script>
 @endsection

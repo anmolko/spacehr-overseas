@@ -12,16 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
-
-
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/{page}', 'App\Http\Controllers\FrontController@page')
-    ->name('page');
-
 
 Auth::routes([
     'reset' => false, // Password Reset Routes...
@@ -319,4 +311,13 @@ Route::group(['prefix' => 'auth', 'middleware' => ['auth']], function () {
 });
 
 
+Route::get('/{page}', 'App\Http\Controllers\FrontController@page')
+    ->name('page');
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

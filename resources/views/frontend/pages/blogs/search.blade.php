@@ -2,65 +2,70 @@
 @section('title') Search | Blog @endsection
 
 @section('content')
-    <section class="page-title" style="background-image: url({{asset('/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Blog Search result</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
-                <li>Search Result For : {{$query}}</li>
-            </ul>
-        </div>
-    </section>
 
-    <div class="sidebar-page-container">
-        <div class="auto-container">
-            <div class="sticky-container row clearfix">
-
-                <!--Sidebar Side-->
-                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-                    @include('frontend.pages.blogs.sidebar')
+    <!-- start breadcrumb area -->
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Blog Search result</h1>
                 </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">Searched for : {{$query}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end breadcrumb area -->
 
-                <!--Content Side-->
-                <div class="content-side col-lg-8 col-md-12 col-sm-12">
-                    <div class="row clearfix">
+    <div class="rts-blog-list-area rts-section-gap">
+        <div class="container">
+            <div class="row g-5">
+                <!-- rts blo post area -->
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <div class="row g-5">
                         @foreach($allPosts as $post)
-                            <div class="news-block-five style-two col-lg-6 col-md-6 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <a href="{{route('blog.single',$post->slug)}}"><img src="{{asset('/images/blog/'.@$post->image) }}" alt="" /></a>
-                                    </div>
-                                    <div class="lower-content">
-                                        <div class="clearfix">
-                                            <div class="pull-left">
-                                                <ul class="post-meta clearfix">
-                                                    <li> {{ucfirst(@$post->category->name)}}</li>
-                                                    <li><span class="icon fa fa-calendar"></span> {{date('j M, Y',strtotime(@$latest->created_at))}}</li>
-                                                </ul>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="blog-grid-inner">
+                                    <div class="blog-header">
+                                        <a class="thumbnail" href="{{route('blog.single',$post->slug)}}">
+                                            <img class="lazy" data-src="{{asset('/images/blog/'.@$post->image) }}" alt="">
+                                        </a>
+                                        <div class="blog-info">
+                                            <div class="user">
+                                                <i class="fal fa-tags"></i>
+                                                <span>{{ucfirst(@$post->category->name)}}</span>
                                             </div>
                                         </div>
-                                        <h2><a href="{{route('blog.single',$post->slug)}}">{{@$post->title}}</a></h2>
-                                        <div class="text">
-                                            {!! ucwords(Str::limit(@$post->description, 100,'...')) !!}
+                                        <div class="date">
+                                            <h6 class="title">{{date('j',strtotime(@$latest->created_at))}}</h6>
+                                            <span>{{date('M',strtotime(@$latest->created_at))}}</span>
                                         </div>
-                                        <a class="read-more" href="{{route('blog.single',$post->slug)}}">Read more</a>
+                                    </div>
+                                    <div class="blog-body">
+                                        <a href="{{route('blog.single',$post->slug)}}">
+                                            <h5 class="title">
+                                                {{@$post->title}}
+                                            </h5>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-                    </div>
 
-                    <!--Styled Pagination-->
-                    <div class="styled-pagination text-center">
-                        {{ $allPosts->links('vendor.pagination.default') }}
+                        {{ $allPosts->links('vendor.pagination.simple-bootstrap-4') }}
 
                     </div>
-                    <!--End Styled Pagination-->
+                </div>
 
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12">
+                    @include('frontend.pages.blogs.sidebar')
                 </div>
             </div>
-
         </div>
     </div>
-
 @endsection

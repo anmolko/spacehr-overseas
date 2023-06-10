@@ -9253,6 +9253,13 @@ input[type=submit] {
   cursor: pointer;
 }
 
+.disabled-button{
+    background: var(--color-primary-alta)!important;
+    pointer-events: none;
+    color: var(--color-primary);
+    transition: var(--transition);
+}
+
 button[disabled],
 input[disabled] {
   cursor: default;
@@ -9266,7 +9273,6 @@ input[type=radio] {
 input[type=search] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
-  appearance: textfield;
   appearance: textfield;
   padding-right: 2px;
   width: 270px;
@@ -9301,7 +9307,7 @@ th {
 
 td,
 .wp-block-calendar tfoot td {
-  border: 1px solid var(--color-border);
+  border:  1px solid #E6E9F0;
   padding: 7px 10px;
 }
 
@@ -26789,6 +26795,7 @@ p.disc.banner-para {
 }
 .rts-single-wized .recent-post-single .thumbnail img {
   min-width: 85px;
+  width: 45px;
   height: auto;
   transition: 0.3s;
 }
@@ -30743,3 +30750,56 @@ p.disc {
   color: var(--color-primary-2);
 }
 /*# sourceMappingURL=../maps/style.css.map */
+
+.custom-description blockquote{
+    margin: 35px 0px;
+    padding: 50px;
+    padding-top: 70px;
+    color: #666;
+    position: relative;
+    background: var(--color-gray);
+    font-weight: normal;
+    font-style: italic;
+    text-align: left;
+    clear: both;
+    font-size: 20px;
+    font-weight: 400;
+    border-radius: 8px;
+    position: relative;
+}
+
+.custom-description blockquote::before {
+    content: "\f10d";
+    font-size: 35px;
+    color: var(--color-primary-3);
+    position: absolute;
+    padding-bottom: 5px;
+    display: inline-block;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 400;
+    text-align: center;
+    top: 45px;
+    background: 0 0;
+}
+
+.custom-description blockquote p {
+    margin-top:5px;
+}
+.custom-description p {
+    margin: 0px 0 20px;
+}
+
+.custom-description ul {
+    padding: 0px!important;
+}
+.custom-description ul li {
+    margin-bottom: 10px;
+}
+.custom-description ul li:before {
+    margin-right: 15px;
+    color: var(--color-primary);
+    font-weight: 400;
+    font-family: "Font Awesome 5 Pro";
+    content: "\f058";
+}
+
