@@ -2,126 +2,121 @@
 @extends('frontend.layouts.master')
 @section('title') Contact Us @endsection
 @section('css')
-    <style>
-
-</style>
 @endsection
 @section('content')
-    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Contact us</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">home</a></li>
-                <li>Contact us</li>
-            </ul>
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Contact</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">Contact us</a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+    <div class="rts-map-area bg-light-white rts-section-gap">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <!-- map area left -->
+                    <div class="mapdetails-inner-one inner">
+                        <div class="left-area single-wized">
+                            <h5 class="title">Get in touch</h5>
+                            <div class="details">
+                                <p>Work and general inquiries</p>
+                                <a class="number" href="#">{{@$setting_data->phone}}</a>
+
+                                <p class="time-header">
+                                    Contact number:
+                                </p>
+                                <p class="time">
+                                    {{@$setting_data->mobile}}
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right-area single-wized">
+                            <h5 class="title">Post Address</h5>
+                            <div class="details">
+                                <p>Office</p>
+                                <a href="#">{{@$setting_data->address}}</a>
+
+                                <p class="headoffice">
+                                    Email
+                                </p>
+                                <p class="office">{{@$setting_data->email}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- map area right -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="rts-contact-form-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="rts-contact-fluid rts-section-gap">
+                        <div class="rts-title-area contact-fluid text-center mb--50">
+                            <p class="pre-title">
+                                Get In Touch
+                            </p>
+                            <h2 class="title">Need Help? Let’s Get in Touch</h2>
+                        </div>
+                        <div class="form-wrapper">
+                            <div id="form-messages"></div>
+                            <form id="contact-forms" name="contact" class="" action="{{route('contact.store')}}" method="post">
+                                @csrf
+                                <div class="name-email">
+                                    <input type="text" name="name" placeholder="Your Name" required>
+                                    <input type="email" name="email" placeholder="Email Address" required>
+                                </div>
+                                <div class="name-email">
+                                    <input type="text" name="phone" placeholder="Your phone number" required>
+                                    <input type="text" name="subject" placeholder="Your Subject">
+                                </div>
+                                <textarea placeholder="Type Your Message" name="message"></textarea>
+                                <button type="submit" class="rts-btn btn-primary">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     @if(@$setting_data->google_map)
-        <div class="map-section">
-            <div class="auto-container">
-                <!--Map Outer-->
-                <div class="map-outer">
-                    <!--Map Canvas-->
-                    <iframe
-                        width="100%"
-                        height="600px"
-                        src="{{@$setting_data->google_map}}"
-                    ></iframe>
+
+        <div class="rts-contact-map-area">
+            <div class="contaciner-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="contact-map-area-fluid">
+                            <iframe class="contact-map" src="{{@$setting_data->google_map}}"
+                                    style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     @endif
-    <section class="contact-section">
-        <div class="auto-container">
-            <div class="row clearfix">
-
-                <!--Info Column-->
-                <div class="info-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                        <div class="content-box">
-                            <h2>Do you want to reach at the next level of Business Success?</h2>
-                            <div class="title">Book a Complimentary Consultation by visiting or calling us!</div>
-                            <ul class="list-style-three">
-                                <li><span class="icon fa fa-map-marker"></span>{{@$setting_data->address}}</li>
-                                <li><span class="icon fa fa-phone"></span>{{@$setting_data->phone}}</li>
-                                <li><span class="icon fa fa-envelope"></span>{{@$setting_data->email}}</li>
-                            </ul>
-                            <!--Social Boxed-->
-                            <ul class="social-boxed">
-                                <ul class="social-icon-one mt-3">
-                                    @if(@$setting_data->facebook)
-                                        <li><a href="{{@$setting_data->facebook}}"><span class="fa-brands fa-facebook"></span></a></li>
-                                    @endif
-                                    @if(@$setting_data->youtube)
-                                        <li><a href="{{@$setting_data->youtube}}"><span class="fa-brands fa-youtube"></span></a></li>
-
-                                    @endif
-                                    @if(@$setting_data->instagram)
-                                        <li><a href="{{@$setting_data->instagram}}"><span class="fa-brands fa-instagram"></span></a></li>
-
-                                    @endif
-                                    @if(@$setting_data->linkedin)
-                                        <li><a href="{{@$setting_data->linkedin}}"><span class="fa-brands fa-linkedin"></span></a></li>
-                                    @endif
-                                    @if(!empty(@$setting_data->ticktock))
-                                        <li><a href="{{@$setting_data->ticktock}}"><span class="fa-brands fa-tiktok"></span></a></li>
-                                    @endif
-                                </ul>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Form Column-->
-                <div class="form-column col-lg-6 col-md-12 col-sm-12">
-                    <div class="inner-column">
-                        <h2>Send a Message</h2>
-                        <div class="title">We are working with different companies around to deliver ideas for their business success.</div>
-                        <!-- Contact Form -->
-                        <div class="contact-form ">
-                            <!--Comment Form-->
-                            <form id="contact_form" name="contact" class="" action="{{route('contact.store')}}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <input type="text" name="name" placeholder="Your Name" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email address" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="phone" placeholder="Phone" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="text" name="subject" placeholder="Subject" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <textarea name="message" placeholder="Message"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <button class="theme-btn message-btn" type="submit" name="submit-form">send message</button>
-                                </div>
-
-                            </form>
-
-                        </div>
-                        <!--End Comment Form -->
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
 
 @endsection
 @section('js')
-  <!-- For Contact Form -->
-  <script src="{{asset('assets/frontend/js/jquery.ajaxchimp.min.js')}}"></script>
+    <!-- For Contact Form -->
+    <script src="{{asset('assets/frontend/js/jquery.ajaxchimp.min.js')}}"></script>
     <script src="{{asset('assets/frontend/js/form-validator.min.js')}}"></script>
     <script src="{{asset('assets/frontend/js/contact-form-script.js')}}"></script>
+    @include('frontend.partials.toast_alert')
+
 @endsection

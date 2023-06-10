@@ -30808,3 +30808,7 @@ p.disc {
     content: "\f058";
 }
 
+.toast-message{
+    font-size: 18px;
+}
+

@@ -372,8 +372,9 @@ class FrontController extends Controller
                 Mail::to($theme_data->email)->send(new ContactDetail($data));
             }
 
-            $status ='success';
-            return response()->json($status);
+            Session::flash('success','Your message was submitted successfully');
+
+            return redirect()->back();
     }
 
     public function careerSingle($slug){
