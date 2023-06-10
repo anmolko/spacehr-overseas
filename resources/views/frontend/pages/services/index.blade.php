@@ -11,54 +11,52 @@
 @endsection
 @section('content')
 
-    <section class="page-title" style="background-image: url({{asset('assets/frontend/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Our Services</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li>Service List</li>
-            </ul>
-        </div>
-    </section>
-
-    <!--Sidebar Page Container-->
-    <div class="sidebar-page-container">
-        <div class="auto-container">
-            <div class="sticky-container row clearfix">
-
-                <!--Sidebar Side-->
-                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-                    @include('frontend.pages.services.sidebar')
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Service List</h1>
                 </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">Our Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <!--Content Side-->
-                <div class="content-side col-lg-8 col-md-12 col-sm-12">
-                    <div class="row clearfix">
+    <div class="rts-service-area rts-section-gapTop pb--200 service-two-bg bg_image">
+        <div class="container">
+            <div class="row g-5 service padding-controler">
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <div class="row g-5">
                         @foreach(@$allservices as $index=>$service)
-                            <div class="news-block-five style-two col-lg-6 col-md-6 col-sm-12">
-                                <div class="inner-box">
-                                    <div class="image">
-                                        <a href="{{route('service.single',$service->slug)}}">
-                                            <img src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="" /></a>
-                                    </div>
-                                    <div class="lower-content">
-                                        <h2><a href="{{route('service.single',$service->slug)}}">{{ucwords(@$service->title)}}</a></h2>
-                                        <a class="read-more" href="{{route('service.single',$service->slug)}}">Read more</a>
+                            <div class="col-xl-6 col-md-6 col-sm-12 col-12 pb--140 pb_md--100">
+                                <div class="service-two-inner">
+                                    <a href="{{route('service.single',$service->slug)}}" class="thumbnail">
+                                        <img class="lazy" data-src="{{asset('/images/service/thumb/thumb_'.@$service->banner_image)}}" alt="" /></a>
+                                    <div class="body-content">
+                                        <div class="hidden-area">
+                                            <h5 class="title">{{ucwords(@$service->title)}}</h5>
+                                            <p class="dsic">
+                                                {{ elipsis(strip_tags($service->description))}}
+                                            </p>
+                                            <a class="rts-read-more-two color-primary" href="{{route('service.single',$service->slug)}}">Read More <i class="fa fa-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
                     </div>
-
-                    <!--Styled Pagination-->
-                    <div class="styled-pagination text-center">
-                        {{ $allservices->links('vendor.pagination.default') }}
-
-                    </div>
-                    <!--End Styled Pagination-->
-
+                </div>
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12">
+                    @include('frontend.pages.services.sidebar')
                 </div>
             </div>
         </div>
     </div>
+
 @endsection

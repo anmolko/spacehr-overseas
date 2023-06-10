@@ -112,211 +112,212 @@
 
     @if(!empty($homepage_info->core_main_heading))
         <div class="rts-service-area rts-section-gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="rts-title-area service core-value text-center">
-                        <p class="pre-title">
-                            {{ucfirst(@$homepage_info->core_main_description)}}
-                        </p>
-                        <h2 class="title">{{ucfirst(@$homepage_info->core_main_heading)}}</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid service-main plr--120-service mt--50 plr_md--0 pl_sm--0 pr_sm--0">
-            <div class="background-service row">
-
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner one">
-                        <div class="thumbnail">
-                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/01.svg')}}" alt="">
-                        </div>
-                        <div class="service-details">
-                            <a>
-                                <h5 class="title">{{ucwords(@$homepage_info->core_heading1 ?? '')}}</h5>
-                            </a>
-                            <p class="disc">
-                                {{ucfirst(@$homepage_info->core_description1 ?? '')}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner two">
-                        <div class="thumbnail">
-                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/02.svg')}}" alt="">
-                        </div>
-                        <div class="service-details">
-                            <a>
-                                <h5 class="title">{{ucwords(@$homepage_info->core_heading2)}}</h5>
-                            </a>
-                            <p class="disc">
-                                {{ucfirst(@$homepage_info->core_description2)}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner three">
-                        <div class="thumbnail">
-                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/03.svg')}}" alt="">
-                        </div>
-                        <div class="service-details">
-                            <a>
-                                <h5 class="title">{{ucwords(@$homepage_info->core_heading3)}}</h5>
-                            </a>
-                            <p class="disc">
-                                {{ucfirst(@$homepage_info->core_description3)}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner four">
-                        <div class="thumbnail">
-                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/04.svg')}}" alt="">
-                        </div>
-                        <div class="service-details">
-                            <a>
-                                <h5 class="title">{{ucwords(@$homepage_info->core_heading4)}}</h5>
-                            </a>
-                            <p class="disc">
-                                {{ucfirst(@$homepage_info->core_description4)}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner five">
-                        <div class="thumbnail">
-                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/05.svg')}}" alt="">
-                        </div>
-                        <div class="service-details">
-                            <a>
-                                <h5 class="title">{{ucwords(@$homepage_info->core_heading5)}}</h5>
-                            </a>
-                            <p class="disc">
-                                {{ucfirst(@$homepage_info->core_description5)}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="service-one-inner six">
-                        <div class="thumbnail">
-                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/06.svg')}}" alt="">
-                        </div>
-                        <div class="service-details">
-                            <a>
-                                <h5 class="title">{{ucwords(@$homepage_info->core_heading6)}}</h5>
-                            </a>
-                            <p class="disc">
-                                {{ucfirst(@$homepage_info->core_description6)}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @if(!empty($homepage_info->action_heading))
+            <div class="container">
                 <div class="row">
-                <div class="cta-one-bg col-12 cta-homepage">
-                    <div class="cta-one-inner">
-                        <div class="cta-left">
-                            <h3 class="title animated fadeIn">{{@$homepage_info->action_heading}}</h3>
-                        </div>
-                        <div class="cta-right">
-                            <a class="rts-btn btn-white" href="{{@$homepage_info->action_link2}}"> {{@$homepage_info->action_link ?? 'Learn more'}}</a>
+                    <div class="col-12">
+                        <div class="rts-title-area service core-value text-center">
+                            <p class="pre-title">
+                                {{ucfirst(@$homepage_info->core_main_description)}}
+                            </p>
+                            <h2 class="title">{{ucfirst(@$homepage_info->core_main_heading)}}</h2>
                         </div>
                     </div>
                 </div>
             </div>
-            @endif
+            <div class="container-fluid service-main plr--120-service mt--50 plr_md--0 pl_sm--0 pr_sm--0">
+                <div class="background-service row">
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="service-one-inner one">
+                            <div class="thumbnail">
+                                <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/01.svg')}}" alt="">
+                            </div>
+                            <div class="service-details">
+                                <a>
+                                    <h5 class="title">{{ucwords(@$homepage_info->core_heading1 ?? '')}}</h5>
+                                </a>
+                                <p class="disc">
+                                    {{ucfirst(@$homepage_info->core_description1 ?? '')}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="service-one-inner two">
+                            <div class="thumbnail">
+                                <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/02.svg')}}" alt="">
+                            </div>
+                            <div class="service-details">
+                                <a>
+                                    <h5 class="title">{{ucwords(@$homepage_info->core_heading2)}}</h5>
+                                </a>
+                                <p class="disc">
+                                    {{ucfirst(@$homepage_info->core_description2)}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="service-one-inner three">
+                            <div class="thumbnail">
+                                <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/03.svg')}}" alt="">
+                            </div>
+                            <div class="service-details">
+                                <a>
+                                    <h5 class="title">{{ucwords(@$homepage_info->core_heading3)}}</h5>
+                                </a>
+                                <p class="disc">
+                                    {{ucfirst(@$homepage_info->core_description3)}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="service-one-inner four">
+                            <div class="thumbnail">
+                                <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/04.svg')}}" alt="">
+                            </div>
+                            <div class="service-details">
+                                <a>
+                                    <h5 class="title">{{ucwords(@$homepage_info->core_heading4)}}</h5>
+                                </a>
+                                <p class="disc">
+                                    {{ucfirst(@$homepage_info->core_description4)}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="service-one-inner five">
+                            <div class="thumbnail">
+                                <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/05.svg')}}" alt="">
+                            </div>
+                            <div class="service-details">
+                                <a>
+                                    <h5 class="title">{{ucwords(@$homepage_info->core_heading5)}}</h5>
+                                </a>
+                                <p class="disc">
+                                    {{ucfirst(@$homepage_info->core_description5)}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="service-one-inner six">
+                            <div class="thumbnail">
+                                <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/06.svg')}}" alt="">
+                            </div>
+                            <div class="service-details">
+                                <a>
+                                    <h5 class="title">{{ucwords(@$homepage_info->core_heading6)}}</h5>
+                                </a>
+                                <p class="disc">
+                                    {{ucfirst(@$homepage_info->core_description6)}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @if(!empty($homepage_info->action_heading))
+                    <div class="row">
+                    <div class="cta-one-bg col-12 cta-homepage">
+                        <div class="cta-one-inner">
+                            <div class="cta-left">
+                                <h3 class="title animated fadeIn">{{@$homepage_info->action_heading}}</h3>
+                            </div>
+                            <div class="cta-right">
+                                <a class="rts-btn btn-white" href="{{@$homepage_info->action_link2}}"> {{@$homepage_info->action_link ?? 'Learn more'}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endif
+            </div>
         </div>
-    </div>
     @endif
 
     @if(!empty($homepage_info->why_heading))
         <div class="rts-business-solution rts-section-gap">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <!-- business solution left -->
-                    <div class="rts-business-solution-left">
-                        <div class="thumbnail">
-                            <img class="lazy" data-src="{{asset('/images/home/welcome/'.@$homepage_info->what_image5)}}" alt="">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <!-- business solution left -->
+                        <div class="rts-business-solution-left">
+                            <div class="thumbnail">
+                                <img class="lazy" data-src="{{asset('/images/home/welcome/'.@$homepage_info->what_image5)}}" alt="">
+                            </div>
                         </div>
+                        <!-- business solution left End -->
                     </div>
-                    <!-- business solution left End -->
-                </div>
-                <div class="col-lg-6">
-                    <div class="rts-business-solution-right">
-                        <div class="title-area">
-                            <span class="sub">
-                                Leading Business Solution
-                            </span>
-                            <h2 class="title">
-                               {{@$homepage_info->why_heading ?? ''}}
-                            </h2>
-                        </div>
-                        <div class="content-area">
-                            <p class="disc">
-                                {{ucwords(@$homepage_info->why_description)}}
-                            </p>
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="single-business-solution-2">
-                                        <div class="icon">
-                                            <img src="{{asset('assets/frontend/images/counterup/icon/01.svg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="counter-details">
-                                                <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->project_completed ?? '450'}}</span></h2>
-                                                <p class="disc"> Project completed</p>
+                    <div class="col-lg-6">
+                        <div class="rts-business-solution-right">
+                            <div class="title-area">
+                                <span class="sub">
+                                    Leading Business Solution
+                                </span>
+                                <h2 class="title">
+                                   {{@$homepage_info->why_heading ?? ''}}
+                                </h2>
+                            </div>
+                            <div class="content-area">
+                                <p class="disc">
+                                    {{ucwords(@$homepage_info->why_description)}}
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="single-business-solution-2">
+                                            <div class="icon">
+                                                <img src="{{asset('assets/frontend/images/counterup/icon/01.svg')}}" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <div class="counter-details">
+                                                    <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->project_completed ?? '450'}}</span></h2>
+                                                    <p class="disc"> Project completed</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="single-business-solution-2">
-                                        <div class="icon">
-                                            <img src="{{asset('assets/frontend/images/counterup/icon/04.svg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="counter-details">
-                                                <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->happy_clients ?? '660'}}</span></h2>
-                                                <p class="disc">Happy Clients</p>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12">
+                                        <div class="single-business-solution-2">
+                                            <div class="icon">
+                                                <img src="{{asset('assets/frontend/images/counterup/icon/04.svg')}}" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <div class="counter-details">
+                                                    <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->happy_clients ?? '660'}}</span></h2>
+                                                    <p class="disc">Happy Clients</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
-                                    <div class="single-business-solution-2">
-                                        <div class="icon">
-                                            <img src="{{asset('assets/frontend/images/counterup/icon/03.svg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="counter-details">
-                                                <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->visa_approved ?? '340'}}</span></h2>
-                                                <p class="disc"> Visa Approved</p>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                        <div class="single-business-solution-2">
+                                            <div class="icon">
+                                                <img src="{{asset('assets/frontend/images/counterup/icon/03.svg')}}" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <div class="counter-details">
+                                                    <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->visa_approved ?? '340'}}</span></h2>
+                                                    <p class="disc"> Visa Approved</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
-                                    <div class="single-business-solution-2">
-                                        <div class="icon">
-                                            <img src="{{asset('assets/frontend/images/counterup/icon/02.svg')}}" alt="">
-                                        </div>
-                                        <div class="content">
-                                            <div class="counter-details">
-                                                <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->success_stories ?? '987'}}</span></h2>
-                                                <p class="disc">Success Stories</p>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt-4">
+                                        <div class="single-business-solution-2">
+                                            <div class="icon">
+                                                <img src="{{asset('assets/frontend/images/counterup/icon/02.svg')}}" alt="">
+                                            </div>
+                                            <div class="content">
+                                                <div class="counter-details">
+                                                    <h2 class="title"><span class="counter animated fadeInDownBig">{{@$homepage_info->success_stories ?? '987'}}</span></h2>
+                                                    <p class="disc">Success Stories</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -327,7 +328,6 @@
                 </div>
             </div>
         </div>
-    </div>
     @endif
 
     @if(@$recruitments[0]->heading)

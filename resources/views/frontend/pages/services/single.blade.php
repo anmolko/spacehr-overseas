@@ -39,67 +39,51 @@
 
 @section('content')
 
-    <section class="page-title" style="background-image: url({{asset('/images/background/6.jpg')}})">
-        <div class="auto-container">
-            <h1>Service Details</h1>
-            <ul class="page-breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li><a href="{{route('service.frontend')}}">Service List</a></li>
-                <li>{{@$singleService->title}}</li>
-            </ul>
-        </div>
-    </section>
-
-    <div class="sidebar-page-container">
-        <div class="auto-container">
-            <div class="row clearfix">
-
-                <!--Sidebar Side-->
-                <div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
-                    @include('frontend.pages.services.sidebar')
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Service Details</h1>
                 </div>
-
-                <!--Content Side-->
-                <div class="content-side col-lg-8 col-md-12 col-sm-12">
-                    <div class="blog-single">
-                        <div class="inner-box">
-                            <div class="image">
-                                <img src="{{asset('/images/service/'.@$singleService->banner_image)}}" alt="" />
-                            </div>
-                            <div class="lower-content">
-                                <div class="clearfix">
-                                    <div class="pull-left">
-                                        <ul class="post-meta clearfix">
-                                            <li><span class="icon fa fa-calendar"></span> {{date('j M, Y',strtotime(@$singleService->created_at))}}</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <h2>{{ucwords(@$singleService->title)}}</h2>
-                                <div class="text">
-                                    {!! $singleService->description !!}
-                                </div>
-                                <div class="post-share-options">
-                                    <div class="post-share-inner clearfix">
-                                        <ul class="pull-right info-links clearfix">
-                                            <li>
-                                                <a href="#"><i class="fa fa-facebook" onclick='fbShare("{{route('service.single',$singleService->slug)}}")'></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-twitter"  onclick='twitShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-whatsapp" onclick='whatsappShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="{{route('service.frontend')}}">Service</a>
+                        <span> / </span>
+                        <a href="#" class="active">{{@$singleService->title}}</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="rts-service-details-area rts-section-gap service-two-bg bg_image">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-md-12 col-sm-12 col-12">
+                    <!-- service details left area start -->
+                    <div class="service-detials-step-1">
+                        <div class="thumbnail">
+                            <img class="lazy" data-src="{{asset('/images/service/'.@$singleService->banner_image)}}" alt="">
+                        </div>
+                        <h4 class="title">{{ucwords(@$singleService->title)}}</h4>
+                        <div class="disc custom-description">
+                            {!! $singleService->description !!}
+                        </div>
+                        <div class="details-share">
+                            <h6>Share:</h6>
+                            <a><i class="fab fa-facebook-f" onclick='fbShare("{{route('service.single',$singleService->slug)}}")'></i></a>
+                            <a><i class="fab fa-twitter" onclick='twitShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
+                            <a><i class="fab fa-whatsapp" onclick='whatsappShare("{{route('service.single',$singleService->slug)}}","{{ $singleService->title }}")'></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!--rts blog wizered area -->
+                <div class="col-xl-4 col-md-12 col-sm-12 col-12 mt_lg--60 pl--50 pl_md--0 pl-lg-controler pl_sm--0">
+                    @include('frontend.pages.services.sidebar')
+                </div>
+                <!-- rts- blog wizered end area -->
             </div>
         </div>
     </div>

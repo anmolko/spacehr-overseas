@@ -129,7 +129,7 @@
                     <div class="product-details-main-inner">
                         <span>Job description</span>
                         <h3 class="title">{{ ucwords(@$singleJob->name) }}</h3>
-                        <div class="disc">{!! $singleJob->description !!} </div>
+                        <div class="disc custom-description">{!! $singleJob->description !!} </div>
                         <div class="details-share">
                             <h6>Share:</h6>
                             <a><i class="fab fa-facebook-f" onclick='fbShare("{{route('job.single',$singleJob->slug)}}")'></i></a>
