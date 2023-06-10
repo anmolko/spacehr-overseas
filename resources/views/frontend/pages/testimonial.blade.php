@@ -16,53 +16,50 @@
     </style>
 @endsection
 @section('content')
-    <div class="sc-breadcrumb-style sc-pt-135 sc-pb-110">
-        <div class="container position-relative">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="sc-slider-content p-z-idex">
-                        <div class="sc-slider-subtitle">Home - Testimonial</div>
-                        <h1 class="slider-title white-color sc-mb-25 sc-sm-mb-15">Client Testimonials</h1>
+    <div class="rts-breadcrumb-area breadcrumb-bg bg_image">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
+                    <h1 class="title">Testimonials</h1>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="bread-tag">
+                        <a href="/">Home</a>
+                        <span> / </span>
+                        <a href="#" class="active">Feedback</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="sc-testimonial-section-three sc-pb-90" style="margin-top: 0px; padding-top:100px">
+    <div class="rts-customer-feedback-area-six rts-section-gap bg-feedback-seven">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-8">
-                    <div class="sc-heading-area sc-mb-35 p-z-idex">
-                        <span class="sub-title"><i class="icon-line"></i> Our Testimonials</span>
-                        <h2 class="title">Happy Customer Feedback About Our Service</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
+            <div class="row mt--40">
                 @foreach($testimonials as $testimonial)
-                    <div class="col-lg-4">
-                        <div class="sc-test-item" style="background: #ffffff;">
-                                <div class="sc-testimonial-text">
-                                    <a><img src="{{asset('assets/frontend/images/icons/quote.png')}}" alt="Blog" /></a>
-                                    <p class="des">
-                                        {{@$testimonial->description }}
-                                    </p>
-                                </div>
-                                <div class="sc-auother-text d-flex align-items-center">
-                                    <div class="sc-auother-image sc-mr-15">
-                                        <img src="{{asset('/images/testimonial/'.@$testimonial->image)}}" alt="Icon" />
-                                    </div>
-                                    <div class="sc-auother-header">
-                                        <h5>{{ucwords($testimonial->name)}}</h5>
-                                        <span class="sub-title">{{ucwords($testimonial->position)}}</span>
-                                    </div>
-                                </div>
+                    <div class="col-lg-6">
+                        <div class="rts-client-reviews-h2 six">
+                        <div class="review-header">
+                            <a href="#" class="thumbnail">
+                                <img class="lazy" data-src="{{asset('/images/testimonial/'.@$testimonial->image)}}" alt="">
+                            </a>
+                            <div class="discription">
+                                <a>
+                                    <h6 class="title">{{ucfirst($testimonial->name)}}</h6>
+                                </a>
+                                <span>{{ucfirst($testimonial->position)}}</span>
                             </div>
+                        </div>
+                        <div class="review-body">
+                            <p class="disc">
+                                {{ucfirst($testimonial->description)}}
+                            </p>
+                            <div class="body-end">
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 @endforeach
-            </div>
-
             </div>
         </div>
     </div>

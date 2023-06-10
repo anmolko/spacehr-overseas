@@ -24632,25 +24632,25 @@ p.disc.banner-para {
 .team-single-one-start:hover {
   transform: translateY(-20px);
 }
-.team-single-one-start .team-image-area a {
+.team-single-one-start .team-image-area image-a {
   overflow: hidden;
   display: block;
   position: relative;
   border-radius: 8px 8px 0 0;
 }
-.team-single-one-start .team-image-area a:hover img {
+.team-single-one-start .team-image-area image-a:hover img {
   transform: scale(1.1);
 }
-.team-single-one-start .team-image-area a img {
+.team-single-one-start .team-image-area image-a img {
   width: 100%;
   transition: 0.3s;
 }
-.team-single-one-start .team-image-area a .team-social {
+.team-social {
   position: absolute;
   bottom: 30px;
   right: 30px;
 }
-.team-single-one-start .team-image-area a .team-social .main i {
+.team-social .main a i {
   padding: 16px;
   background: #fff;
   border-radius: 50%;
@@ -24660,11 +24660,11 @@ p.disc.banner-para {
   color: var(--color-primary);
   transition: 0.3s;
 }
-.team-single-one-start .team-image-area a .team-social:hover .main i {
+ .team-social:hover .main i {
   background: var(--color-primary);
   color: #fff;
 }
-.team-single-one-start .team-image-area a .team-social .team-social-one {
+ .team-social-one {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -24672,7 +24672,7 @@ p.disc.banner-para {
   transition: 1s;
   opacity: 0;
 }
-.team-single-one-start .team-image-area a .team-social .team-social-one i {
+ .team-social-one i {
   background: #fff;
   border-radius: 60%;
   font-size: 16px;
@@ -24687,14 +24687,14 @@ p.disc.banner-para {
   align-items: center;
   justify-content: center;
 }
-.team-single-one-start .team-image-area a .team-social .team-social-one i:hover {
+ .team-social-one i:hover {
   background: var(--color-primary);
   color: #fff;
 }
-.team-single-one-start .team-image-area a .team-social:hover .main {
+ .team-social:hover .main {
   opacity: 0;
 }
-.team-single-one-start .team-image-area a .team-social:hover .team-social-one {
+ .team-social:hover .team-social-one {
   transform: translateY(-96%);
   z-index: 2;
   opacity: 1;
@@ -24862,7 +24862,7 @@ p.disc.banner-para {
   background: var(--color-primary-4);
   color: #fff;
 }
-.rts-team-area4 .container .mySwiperh1_team .team-single-one-start .team-image-area .team-social .main i {
+.rts-team-area4 .container .mySwiperh1_team .team-single-one-start .team-image-area .team-social .main a i {
   color: var(--color-primary-4);
 }
 .rts-team-area4 .container .mySwiperh1_team .team-single-one-start .team-image-area .team-social .team-social-one i {
