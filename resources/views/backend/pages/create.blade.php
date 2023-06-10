@@ -123,11 +123,28 @@
                                     Please enter the page Name.
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mb-2">
                                 <label>Slug <span class="text-muted text-danger">*</span></label>
                                 <input type="text" class="form-control" name="slug" id="slug" required>
                                 <div class="invalid-feedback">
                                     Please enter the Page Slug.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Banner Image </label>
+                                <div class="col-4">
+                                    <img  id="current-page-img"  src="{{asset('/images/default-image.jpg')}}" class="position-relative img-fluid img-thumbnail blog-feature-image" >
+                                    <input  type="file" accept="image/png, image/jpeg" hidden
+                                            id="page-image" onchange="loadbasicFile('page-image','current-page-img',event)" name="image"
+                                            class="profile-foreground-img-file-input" >
+
+                                    <figcaption class="figure-caption">Banner image for current basic section. (SIZE:  1920 x 400px)</figcaption>
+                                    <div class="invalid-feedback" >
+                                        Please select a image.
+                                    </div>
+                                    <label for="page-image" class="profile-photo-edit btn btn-light feature-image-button">
+                                        <i class="ri-image-edit-line align-bottom me-1"></i> Add Image
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -447,6 +464,12 @@
 
             e.preventDefault();
         });
+
+        var loadbasicFile = function(id1,id2,event) {
+            var image       = document.getElementById(id1);
+            var replacement = document.getElementById(id2);
+            replacement.src = URL.createObjectURL(event.target.files[0]);
+        };
 
         $('#status1, #status2').click(function(event){
             event.preventDefault();

@@ -11,6 +11,7 @@ use App\Models\SectionGallery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Intervention\Image\Facades\Image;
 
 class PageController extends Controller
 {
@@ -19,10 +20,11 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    private $path;
     public function __construct()
     {
         $this->middleware('auth');
+        $this->path   = public_path('/images/page');
     }
 
     public function index()
@@ -60,6 +62,20 @@ class PageController extends Controller
                 'status' => $request->input('status'),
                 'created_by' => Auth::user()->id,
             ];
+
+            if(!empty($request->file('image'))){
+                $image          = $request->file('image');
+                $name           = uniqid().'_'.$image->getClientOriginalName();
+                if (!is_dir($this->path)) {
+                    mkdir($this->path, 0777);
+                }
+                $thumb          = 'thumb_'.$name;
+                $path           = base_path().'/public/images/page/';
+                $moved          = Image::make($image->getRealPath())->fit(1920, 400)->orientate()->save($path.$name);
+                if ($moved){
+                    $data['image']=$name;
+                }
+            }
             $status = Page::create($data);
             $sections = $request->input('sorted_sections');
             $pos = $request->position;
@@ -255,6 +271,9 @@ class PageController extends Controller
             $status = 'warning';
             return response()->json(['status' => $status, 'message' => 'The page slug is already in use !']);
         } else {
+            if (!is_dir($this->path)) {
+                mkdir($this->path, 0777);
+            }
             $incoming_sections = $request->input('sorted_sections');
             $section = PageSection::where('page_id', $id)->get()->toArray();
             $db_section_slug = array_map(function ($item) {
@@ -265,7 +284,22 @@ class PageController extends Controller
             $page->name = $request->input('name');
             $page->slug = $request->input('slug');
             $page->status = $request->input('status');
+            $oldimage     = $page->image;
             $pos = $request->position;
+
+            if (!empty($request->file('image'))){
+                $image       = $request->file('image');
+                $name1       = uniqid().'_'.$image->getClientOriginalName();
+                $path        = base_path().'/public/images/page/';
+                $moved       = Image::make($image->getRealPath())->fit(1920, 400)->orientate()->save($path.$name1);
+
+                if ($moved){
+                    $page->image= $name1;
+                    if (!empty($oldimage) && file_exists(public_path().'/images/page/'.$oldimage)){
+                        @unlink(public_path().'/images/page/'.$oldimage);
+                    }
+                }
+            }
 
 
             $status = $page->update();
@@ -517,6 +551,7 @@ class PageController extends Controller
     {
         $delete = Page::with('sections')->find($id);
         $pageid = $delete->id;
+        $oldimage = $delete->image;
         $menuitems = MenuItem::where('page_id', $pageid)->get();
         $menuname = [];
 
@@ -529,6 +564,9 @@ class PageController extends Controller
             return response()->json(['status' => $status, 'message' => 'This page is attached to menu(s). Please remove menu item first to delete this page.', 'name' => $menuname]);
         }
 
+        if (!empty($oldimage) && file_exists(public_path().'/images/page/'.$oldimage)){
+            @unlink(public_path().'/images/page/'.$oldimage);
+        }
 
         foreach ($delete->sections as $section) {
             if ($section->section_slug == 'basic_section') {
