@@ -18,8 +18,7 @@
 @endsection
 @section('content')
     <div class="rts-breadcrumb-area bg_image"
-
-    style="    background-image: url( {{ $page_detail->image ? asset('images/page/'.$page_detail->image) : asset('assets/frontend/images/breadcrumb/01.jpg') }} );">
+         style="background:linear-gradient(rgb(41 122 190 / 63%), rgb(233 63 51 / 30%)), url( {{ $page_detail->image ? asset('images/page/'.$page_detail->image) : asset('assets/frontend/images/breadcrumb/01.jpg') }} ); margin-bottom:30px;">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 breadcrumb-1">
@@ -38,7 +37,7 @@
     @foreach($sections as $key=>$value)
 
         @if($value == "basic_section")
-            <div class="rts-business-goal rts-business-goal2 mt--0 rts-section-gapBottom">
+            <div class="rts-business-goal rts-business-goal2 mt--0 rts-section-gapBottom" style="padding-bottom: 30px;!important;">
                 <div class="container">
                     <div class="row">
                         <!-- business goal left -->
@@ -60,7 +59,7 @@
                                 </div>
                                 <div class="rts-business-goal pl--30" style="margin-top: 10px;">
                                     <div class="about-inner">
-                                        <p class="disc fs-18 text-justify">
+                                        <p class="disc fs-18 text-justify" style="font-size: 18px!important;  line-height: 30px!important;">
                                             {!! @$basic_elements->description !!}
                                         </p>
                                     </div>
@@ -158,7 +157,7 @@
         @endif
 
         @if($value == "simple_header_and_description")
-            <div class="rts-service-details-area rts-section-gap">
+            <div class="rts-service-details-area rts-section-gap" style="padding: 0px!important;">
                 <div class="container">
                     @if(@$header_descp_elements->heading!==null)
                         <div class="col-12">
@@ -220,42 +219,44 @@
         @endif
 
         @if($value == "small_box_description")
-            <div class="rts-service-area rts-section-gap" style="padding: 75px 0;">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <p class="pre-title" style="margin: 0 0 18px;">
-                                    {{ ucfirst($process_elements[0]->subheading ?? 'Advanced Solutions')}}
-                                </p>
-                                <h2 class="title">{{@$process_elements[0]->heading}}</h2>
+            @if(count($process_elements)>0))
+                <div class="rts-service-area rts-section-gap" style="padding: 75px 0;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <p class="pre-title" style="margin: 0 0 18px;">
+                                            {{ ucfirst($process_elements[0]->subheading ?? 'Space HR Solution')}}
+                                    </p>
+                                    <h2 class="title">{{@$process_elements[0]->heading}}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row g-5 mt--10">
-                        @for ($i = 1; $i <=@$process_num; $i++)
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                                <!-- single service for home six -->
-                                <div class="single-service-home-six">
-                                    <div class="icon">
-                                        <img src="{{asset('assets/frontend/images/'. get_solution_icons($i-1))}}" alt="">
-                                    </div>
-                                    <div class="inner">
-                                        <h5 class="title">
-                                            {{ucwords(@$process_elements[$i-1]->list_header ??'')}}
-                                        </h5>
-                                        <p class="disc">
-                                            {{ucfirst(@$process_elements[$i-1]->list_description)}}
-                                        </p>
+                        <div class="row g-5 mt--10">
+                            @for ($i = 1; $i <=@$process_num; $i++)
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                    <!-- single service for home six -->
+                                    <div class="single-service-home-six">
+                                        <div class="icon">
+                                            <img src="{{asset('assets/frontend/images/'. get_solution_icons($i-1))}}" alt="">
+                                        </div>
+                                        <div class="inner">
+                                            <h5 class="title">
+                                                {{ucwords(@$process_elements[$i-1]->list_header ??'')}}
+                                            </h5>
+                                            <p class="disc">
+                                                {{ucfirst(@$process_elements[$i-1]->list_description)}}
+                                            </p>
 
+                                        </div>
                                     </div>
+                                    <!-- single service for home six End -->
                                 </div>
-                                <!-- single service for home six End -->
-                            </div>
-                        @endfor
+                            @endfor
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endif
         @endif
 
         @if($value == "gallery_section")
@@ -297,44 +298,46 @@
         @endif
 
         @if($value == "slider_list")
-            <div class="rts-business-case rts-section-gap business-case-bg-2">
-            <div class="container">
-                <div class="row">
-                    <div class="title-areas text-center business-case">
-                        <span>{{ucwords(@$slider_list_elements[0]->description)}}</span>
-                        <h2 class="title">{{ucwords(@$slider_list_elements[0]->heading)}}</h2>
+            @if(count($slider_list_elements)>0))
+                <div class="rts-business-case rts-section-gap business-case-bg-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="title-areas text-center business-case">
+                            <span>{{ucwords(@$slider_list_elements[0]->description)}}</span>
+                            <h2 class="title">{{ucwords(@$slider_list_elements[0]->heading)}}</h2>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-cusiness-case-h2 mt--50">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="swiper mySwiperh2_Business_Cases">
-                            <div class="swiper-wrapper">
-                                @for ($i = 1; $i <=@$list_3; $i++)
-                                    <div class="swiper-slide">
-                                        <div class="rts-business-case-s-2">
-                                            <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}" class="thumbnail">
-                                                <img src="{{ asset('/images/section_elements/list_1/thumb/thumb_'.$slider_list_elements[$i-1]->list_image) }}" alt="Business_case">
-                                            </a>
-                                            <div class="inner">
-                                                <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}">
-                                                    <h5 class="title">
-                                                        {{ucwords(@$slider_list_elements[$i-1]->list_header)}}
-                                                    </h5>
+                <div class="container-cusiness-case-h2 mt--50">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="swiper mySwiperh2_Business_Cases">
+                                <div class="swiper-wrapper">
+                                    @for ($i = 1; $i <=@$list_3; $i++)
+                                        <div class="swiper-slide">
+                                            <div class="rts-business-case-s-2">
+                                                <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}" class="thumbnail">
+                                                    <img src="{{ asset('/images/section_elements/list_1/thumb/thumb_'.$slider_list_elements[$i-1]->list_image) }}" alt="Business_case">
                                                 </a>
-                                                <span>  {{ elipsis(strip_tags(@$slider_list_elements[$i-1]->list_description))}}</span>
+                                                <div class="inner">
+                                                    <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}">
+                                                        <h5 class="title">
+                                                            {{ucwords(@$slider_list_elements[$i-1]->list_header)}}
+                                                        </h5>
+                                                    </a>
+                                                    <span>  {{ elipsis(strip_tags(@$slider_list_elements[$i-1]->list_description))}}</span>
+                                                </div>
+                                                <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}" class="over_link"></a>
                                             </div>
-                                            <a href="{{route('slider.single',@$slider_list_elements[$i-1]->subheading)}}" class="over_link"></a>
                                         </div>
-                                    </div>
-                                @endfor
+                                    @endfor
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            @endif
         @endif
 
     @endforeach

@@ -40,6 +40,54 @@
         </div>
     @endif
 
+    @if($homepage_info->mission)
+        <div class="rts-service-area home-seven rts-section-gap" style="padding-top: 0px!important;">
+        <div class="container">
+            <div class="row g-5 mt--80">
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="service-single-style-six" style="height: 372px;">
+                        <div class="icon">
+                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/22.svg')}}" alt="">
+                        </div>
+                        <h5 class="title">
+                            Our Mission
+                        </h5>
+                        <p class="disc">
+                            {{ ucfirst(@$homepage_info->mission) }}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="service-single-style-six" style="height: 372px;">
+                        <div class="icon">
+                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/24.svg')}}" alt="">
+                        </div>
+                        <h5 class="title">
+                            Our Vision
+                        </h5>
+                        <p class="disc">
+                            {{ ucfirst(@$homepage_info->vision) }}
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="service-single-style-six" style="height: 372px;">
+                        <div class="icon">
+                            <img class="lazy" data-src="{{asset('assets/frontend/images/service/icon/23.svg')}}" alt="">
+                        </div>
+                        <h5 class="title">
+                            Our Value
+                        </h5>
+                        <p class="disc">
+                            {{ ucfirst(@$homepage_info->value) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
     @if(!empty($homepage_info->welcome_description))
         <div class="rts-about-area rts-section-gap bg-about-sm-shape">
             <div class="container">
@@ -56,7 +104,9 @@
                             <p class="disc fs-18 text-justify">
                                 {{ ucfirst(@$homepage_info->welcome_description) }}
                             </p>
-                            <a href="#" class="rts-btn btn-primary-3 color-h-black">Get Started</a>
+                            @if(@$homepage_info->welcome_link)
+                                <a href="{{@$homepage_info->welcome_link}}" class="rts-btn btn-primary-3 color-h-black">{{ @$homepage_info->welcome_button }}</a>
+                            @endif
                         </div>
                     </div>
                     <!-- about right -->

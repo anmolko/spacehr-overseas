@@ -269,6 +269,24 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-12">
+                                            <div class="form-group mb-3">
+                                                <label>Heading </label>
+                                                <input type="text" class="form-control" name="gallery_heading" value="{{@$heading}}" >
+                                                <div class="invalid-feedback">
+                                                    Please enter the heading.
+                                                </div>
+                                            </div>
+                                            <div class="form-group mb-3">
+                                                <label>Subeading </label>
+                                                <input type="text" class="form-control" name="gallery_subheading" value="{{@$subheading}}">
+                                                <div class="invalid-feedback">
+                                                    Please enter the subheading.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="row">
+                                        <div class="col-md-12">
                                             <label class="image-checkbox">
                                                 <img class="img-responsive" src="{{asset('assets/backend/img/page_sections/gallery_section.png')}}" width="100%" />
                                                 <input type="checkbox" name="section[]" value="gallery_section" id="gallery_section.png"/>
